@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;YAQ/js/carouselMovement&apos; to &apos;carouselMovement.js&apos;" description="Rename resource &apos;carouselMovement&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="js/carouselMovement" name="carouselMovement.js" stamp="1511975843668" updateReferences="true"/>
+</session>

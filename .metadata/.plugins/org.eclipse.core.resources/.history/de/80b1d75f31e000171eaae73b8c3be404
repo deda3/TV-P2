@@ -1,0 +1,29 @@
+
+window.onload = function () {
+    // Initialization
+	$(".carousel").first().find("[data-slick-index='" + 0 + "']").focus();
+	
+    // add eventListener for tizenhwkey
+	document.addEventListener('keydown', function(e) {
+    	console.log(e.keyCode);
+//		if (e.keyValue == "back"){
+//			console.log("back");
+//			try {
+//			    tizen.application.getCurrentApplication().exit();
+//			} catch (ignore) {
+//				
+//			}
+//    	}
+    	switch(e.keyCode){
+    	// right arrow
+    	case 39:
+    		$(".carousel:focus").next().focus();
+    		break;
+    	// left arrow
+		case 39:
+			$(".carousel:focus").prev().focus();
+			break;
+    	}s
+	}
+    });    
+};

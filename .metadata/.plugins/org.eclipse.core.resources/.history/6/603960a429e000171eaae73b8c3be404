@@ -1,0 +1,24 @@
+
+window.onload = function () {
+    // Initialization
+	$(".carousel").first().find("[data-slick-index='" + 0 + "']").focus();
+
+    // add eventListener for tizenhwkey
+    document.addEventListener('tizenhwkey', function(e) {
+    	switch (e.keyName){
+    		case "back":
+    			try {
+    			    tizen.application.getCurrentApplication().exit();
+    			} catch (ignore) {
+    				
+    			}
+    			break;
+    		case "right":
+    			$(".move:focus").next().focus();
+    			break;
+    		case "left":
+    			$(".move:focus").prev().focus();
+    			break;
+    	}
+    });    
+};

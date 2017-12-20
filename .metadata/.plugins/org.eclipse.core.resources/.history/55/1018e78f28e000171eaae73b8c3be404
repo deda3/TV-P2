@@ -1,0 +1,25 @@
+
+window.onload = function () {
+    // Initialization
+		console.log($(".carousel").find("[data-slick-index='" + 0 + "']"));
+		$(".carousel")[0].find("[data-slick-index='" + 0 + "']").focus();
+
+    // add eventListener for tizenhwkey
+    document.addEventListener('tizenhwkey', function(e) {
+    	switch (e.keyName){
+    		case "back":
+    			try {
+    			    tizen.application.getCurrentApplication().exit();
+    			} catch (ignore) {
+    				
+    			}
+    			break;
+    		case "right":
+    			$(".move:focus").next().focus();
+    			break;
+    		case "left":
+    			$(".move:focus").prev().focus();
+    			break;
+    	}
+    });    
+};

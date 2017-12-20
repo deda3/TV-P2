@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.tizen.web.tv.sec.simulator.standalone.launch.simulatorApplication">
+<stringAttribute key="org.tizen.web.common.project" value=""/>
+</launchConfiguration>

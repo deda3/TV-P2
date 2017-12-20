@@ -1,0 +1,20 @@
+
+window.onload = function () {
+    // Initialization
+	$(".carousel").first().find("[data-slick-index='" + 0 + "']").focus();
+	
+    // add eventListener for tizenhwkey
+	document.addEventListener('keydown', function(e) {
+    	console.log(e.keyCode);
+    	switch(e.keyCode){
+    	// right arrow
+    	case keyCode.RightArrow:
+			$(".panel:focus").next().focus();	
+    		break;
+    	// left arrow
+		case keyCode.LeftArrow:
+			$(".panel:focus").prev().focus();
+			break;
+    	}
+	});    
+};
