@@ -1,0 +1,84 @@
+window.onload = function () {
+    // initialization
+	$("#main_carousel").find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
+	// prevent click default behaviour
+	$(document).on('click', function (event) {
+		event.preventDefault();
+		return false;
+	});	
+	// add eventListener for keydown
+	document.addEventListener('keydown', function(e) {
+		e.preventDefault();
+    	console.log(e.keyCode);
+    	switch(e.keyCode){
+    	// center button
+    	case 13: 
+    		$(".panel:focus").addClass("selected_category");
+    	// left arrow
+		case 37:
+			$(".panel:focus").prev().focus();
+			break;
+		// up arrow
+		case 38:
+			$('html,body').animate({
+                scrollTop: 0
+            }, 500, function(){ // function to focus here
+            	$("#main_carousel").find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
+            });
+			break; 	
+    	// right arrow
+    	case 39:
+			$(".panel:focus").next().focus();	
+    		break;
+    	// down arrow
+    	case 40:
+    		// get the category id the user selected
+    		var src = $(".panel:focus").children(0).attr('src');
+    		var id = src.slice(4,5);
+    		// load the subcategories panels depending on the category selected
+    		var subcat = loadSecondPage(id);
+    		$('html,body').animate({
+    			scrollTop: $(subcat.concat("carousel")).find(".panel.slick-slide.slick-current.slick-active.slick-center").offset().top
+            }, 500, function(){ // function to focus here
+            	$(subcat.concat("carousel")).find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
+            });
+    		break;
+    	}
+	});    
+};
+
+function loadSecondPage(id) {
+	var string
+	// modify depending on the category
+	switch(id) {
+	case '0':
+		$("#music_page").show();
+		$("#movies_page").hide();
+		$("#sports_page").hide();
+		$("#tv_page").hide();
+		string = "#music_";
+		break;
+	case '1': 
+		$("#music_page").hide();
+		$("#movies_page").show();
+		$("#sports_page").hide();
+		$("#tv_page").hide();
+		string = "#movies_";	
+		break;
+	case '2': 
+		$("#music_page").hide();
+		$("#movies_page").hide();
+		$("#sports_page").show();
+		$("#tv_page").hide();
+		string = "#sports_";
+		break;
+	case '3' : 
+		$("#music_page").hide();
+		$("#movies_page").hide();
+		$("#sports_page").hide();
+		$("#tv_page").show();
+		string = "#tv_";	
+		break;
+	}
+	return string;
+}

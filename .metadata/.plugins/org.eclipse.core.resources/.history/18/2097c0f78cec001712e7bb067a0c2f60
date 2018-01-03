@@ -1,0 +1,144 @@
+* {
+    font-family: Verdana, Lucida Sans, Arial, Helvetica, sans-serif;
+}
+
+html {
+	overflow: hidden;
+}
+
+body {
+    margin: 0px auto;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+}
+
+#home_page {
+	order:1;
+}
+
+#music_page {
+	order:2;
+}
+
+#movies_page {
+	order:2;
+}
+
+#sports_page {
+	order:2;
+}
+
+#tv_page {
+	order:2;
+}
+
+.page {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	height: 100vh;
+}
+
+.title {
+	display: flex;
+	flex-direction: row;
+	height: 20vh;
+	width: 100vw;
+	order: 1;
+	font-weight: bold;
+	font-size: 5em;
+	color: #fff;
+	padding: 100px;
+}
+
+.content_text {
+	order: 1;
+	width: 70%;
+	margin-left: 100px;
+}
+
+.page_info {
+	order: 2;
+	font-weight: normal;
+	font-size: 25px;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.up {
+	order:1;
+}
+
+.down {
+	order:2;
+}
+
+.arrow_img {
+	padding-right: 20px;
+	padding-top: 20px;
+}
+
+.wrapper {
+	order:2;
+	height: 80vh;
+}
+
+.carousel {
+	top: 45%;
+    left: 55%;
+    padding: -50px;
+    transform: translate(-50%, -50%);
+}
+
+.panel {
+	display: block;
+	float: left;
+	border: none;
+	position: relative;
+	padding: 100px;
+}
+
+.panel:focus {
+	outline:none;
+	border: none;
+}
+
+.panel {
+	width: 33%;
+	margin-top: 20px;
+}
+
+.panel img {
+	height: 500px;
+	border: 2px solid white;
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 0px 5px 0px white;
+	-moz-box-shadow: 0px 0px 5px 0px white;
+	box-shadow: 0px 0px 5px 0px white;
+}
+
+.panel:focus img {
+	height: 700px;
+	border: 5px solid white;
+	margin-top: -100px;
+	margin-left: -25px;
+	-webkit-box-shadow: 0px 0px 15px 5px white;
+	-moz-box-shadow: 0px 0px 15px 5px white;
+	box-shadow: 0px 0px 15px 5px white;
+}
+
+.selected_category:focus img {
+	border: 5px solid #00ff00;	
+	-webkit-box-shadow: 0px 0px 15px 5px #0b7a1d;
+	-moz-box-shadow: 0px 0px 15px 5px #0b7a1d;
+	box-shadow: 0px 0px 15px 5px #0b7a1d;
+}
+
+.selected_category img {
+	border: 2px solid #00ff00;
+}

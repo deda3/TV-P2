@@ -168,7 +168,7 @@ AlarmManager.PERIOD_WEEK = new Number();
  * Adds an alarm to the storage.
             <p>
 Sets an alarm with the application ID to be run. You should definitely provide the application ID to run
-and the <a href=" http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application_service.htm">application control </a>information if it is necessary.
+and the <a href=" http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application_service.htm">application control </a>information if it is necessary.
 For more information about the application control, see <a href="application.html">The Application API</a>.
             </p>
            
@@ -240,7 +240,7 @@ Each application has its own individual alarm storage, that is, applications can
  * <p>
 Once an alarm goes off, it will be removed from the alarm storage automatically.
 <em>AlarmManager</em> provides methods to manage alarms such as adding and removing.
-For more information on the Alarm features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/alarm.htm">Alarm Guide</a>.
+For more information on the Alarm features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/alarm.htm">Alarm Guide</a>.
         </p>
  *
  * @type AlarmManager
@@ -255,7 +255,7 @@ Each application has its own individual alarm storage, that is, applications can
  * <p>
 Once an alarm goes off, it will be removed from the alarm storage automatically.
 <em>AlarmManager</em> provides methods to manage alarms such as adding and removing.
-For more information on the Alarm features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/alarm.htm">Alarm Guide</a>.
+For more information on the Alarm features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/alarm.htm">Alarm Guide</a>.
         </p>
  *
  * @type AlarmManager
@@ -565,7 +565,7 @@ the basic operations for the current application such as exit or hide.
 Since Tizen 2.4 the <em>Application</em> interface provides application event broadcasting and listening features. An application can broadcast user events to other listening applications and listen to broadcasted user events from other applications. In a future Tizen release, applications will also be able to receive pre-defined system events from the platform.
         </p>
  * <p>
-For more information on the Application features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application.htm">Application Guide</a>.
+For more information on the Application features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application.htm">Application Guide</a>.
         </p>
  *
  * @feature http://tizen.org/feature/battery
@@ -1200,7 +1200,7 @@ the basic operations for the current application such as exit or hide.
 Since Tizen 2.4 the <em>Application</em> interface provides application event broadcasting and listening features. An application can broadcast user events to other listening applications and listen to broadcasted user events from other applications. In a future Tizen release, applications will also be able to receive pre-defined system events from the platform.
         </p>
  * <p>
-For more information on the Application features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application.htm">Application Guide</a>.
+For more information on the Application features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application.htm">Application Guide</a>.
         </p>
  *
  * @feature http://tizen.org/feature/battery
@@ -1228,7 +1228,7 @@ the basic operations for the current application such as exit or hide.
 Since Tizen 2.4 the <em>Application</em> interface provides application event broadcasting and listening features. An application can broadcast user events to other listening applications and listen to broadcasted user events from other applications. In a future Tizen release, applications will also be able to receive pre-defined system events from the platform.
         </p>
  * <p>
-For more information on the Application features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application.htm">Application Guide</a>.
+For more information on the Application features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application.htm">Application Guide</a>.
         </p>
  *
  * @feature http://tizen.org/feature/battery
@@ -1484,7 +1484,7 @@ the basic operations for the current application such as exit or hide.
 Since Tizen 2.4 the <em>Application</em> interface provides application event broadcasting and listening features. An application can broadcast user events to other listening applications and listen to broadcasted user events from other applications. In a future Tizen release, applications will also be able to receive pre-defined system events from the platform.
         </p>
  * <p>
-For more information on the Application features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application.htm">Application Guide</a>.
+For more information on the Application features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/app_guide/application.htm">Application Guide</a>.
         </p>
  *
  * @feature http://tizen.org/feature/battery
@@ -1579,7 +1579,7 @@ ArchiveFileProgressCallback.prototype = new Object();
 /**
  * The Archive API provides functions to create and manage archive files. You can extract files, add a file to an archive file, and so on.
  * <p>
-For more information about how to use Archive API, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/archive.htm">Archive Guide</a>.
+For more information about how to use Archive API, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/archive.htm">Archive Guide</a>.
         </p>
  *
  * @type ArchiveManager
@@ -1967,7 +1967,7 @@ ArchiveFileProgressCallback.prototype.onprogress = function(operationIdentifier,
 /**
  * The Archive API provides functions to create and manage archive files. You can extract files, add a file to an archive file, and so on.
  * <p>
-For more information about how to use Archive API, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/archive.htm">Archive Guide</a>.
+For more information about how to use Archive API, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/archive.htm">Archive Guide</a>.
         </p>
  *
  * @type ArchiveManager
@@ -2424,10 +2424,10 @@ It is possible to search for specific content using filters.
 The API also supports setting the attributes of specific content.
         </p>
  * <p>
-For more information on the Content features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/mediacontent.htm">Content Guide</a>.
+For more information on the Content features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/mediacontent.htm">Content Guide</a>.
         </p>
  * <p>
-For more information about how to use the playlist feature of the Content API, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/playlist.htm">Playlist Guide</a>.
+For more information about how to use the playlist feature of the Content API, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/playlist.htm">Playlist Guide</a>.
         </p>
  * <p>
 Playlist functionality has been added in Tizen 2.3.
@@ -3080,10 +3080,10 @@ It is possible to search for specific content using filters.
 The API also supports setting the attributes of specific content.
         </p>
  * <p>
-For more information on the Content features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/mediacontent.htm">Content Guide</a>.
+For more information on the Content features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/mediacontent.htm">Content Guide</a>.
         </p>
  * <p>
-For more information about how to use the playlist feature of the Content API, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/playlist.htm">Playlist Guide</a>.
+For more information about how to use the playlist feature of the Content API, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/playlist.htm">Playlist Guide</a>.
         </p>
  * <p>
 Playlist functionality has been added in Tizen 2.3.
@@ -3408,7 +3408,7 @@ DataControlChangeCallback.prototype.onsuccess = function(type, data){ return; };
 The DataControl functionality provides a way to access specific data that is exported by other applications.
         </p>
  * <p>
-Please read the <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.native.appprogramming/html/guide/app/data_controls.htm">Native DataControl API</a> to know how to share own application data with other applications.
+Please read the <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.native.appprogramming/html/guide/app/data_controls.htm">Native DataControl API</a> to know how to share own application data with other applications.
         </p>
  *
  * @type DataControlManager
@@ -3478,7 +3478,7 @@ DataControlConsumerObject.prototype.removeChangeListener = function(watchId){ re
 The DataControl functionality provides a way to access specific data that is exported by other applications.
         </p>
  * <p>
-Please read the <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.native.appprogramming/html/guide/app/data_controls.htm">Native DataControl API</a> to know how to share own application data with other applications.
+Please read the <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.native.appprogramming/html/guide/app/data_controls.htm">Native DataControl API</a> to know how to share own application data with other applications.
         </p>
  *
  * @type DataControlManager
@@ -3610,7 +3610,7 @@ DownloadManager.prototype.setListener = function(downloadId, downloadCallback){ 
 /**
  * This API provides methods to asynchronously download the contents of a URL to a storage.
  * <p>
-For more information on the Download features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/download.htm">Download Guide</a>.
+For more information on the Download features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/download.htm">Download Guide</a>.
         </p>
  *
  * @feature http://tizen.org/feature/network.wifi
@@ -3733,7 +3733,7 @@ DownloadCallback.prototype.onfailed = function(downloadId, error){ return; };
 /**
  * This API provides methods to asynchronously download the contents of a URL to a storage.
  * <p>
-For more information on the Download features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/download.htm">Download Guide</a>.
+For more information on the Download features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/download.htm">Download Guide</a>.
         </p>
  *
  * @feature http://tizen.org/feature/network.wifi
@@ -3980,7 +3980,7 @@ ExifInformation.prototype.userComment = new String();
 /**
  * The Exif API provides interfaces and methods for manipulating data from a JPEG file. The object provides methods to retrieve the object from a JPEG file and save the Exif data from the object in the JPEG file. The object provides functionality to get and set the Exif attributes corresponding to the Exif tag. Changing the value of the attribute in the object stores the Exif data in the object. It does not change data in the JPEG file. For applying the modified Exif data to the JPEG file, the saveExifInfo() method of the object should be called with the object that has the modified Exif data.
  * <p>
-For more information about how to use Exif API, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/exif.htm">Exif Guide</a>.
+For more information about how to use Exif API, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/exif.htm">Exif Guide</a>.
         </p>
  *
  * @type ExifManager
@@ -4084,7 +4084,7 @@ ExifManager.prototype.getThumbnail = function(uri, successCallback, errorCallbac
 /**
  * The Exif API provides interfaces and methods for manipulating data from a JPEG file. The object provides methods to retrieve the object from a JPEG file and save the Exif data from the object in the JPEG file. The object provides functionality to get and set the Exif attributes corresponding to the Exif tag. Changing the value of the attribute in the object stores the Exif data in the object. It does not change data in the JPEG file. For applying the modified Exif data to the JPEG file, the saveExifInfo() method of the object should be called with the object that has the modified Exif data.
  * <p>
-For more information about how to use Exif API, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/exif.htm">Exif Guide</a>.
+For more information about how to use Exif API, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/content_guide/exif.htm">Exif Guide</a>.
         </p>
  *
  * @type ExifManager
@@ -5147,7 +5147,7 @@ on aspects that cannot be supported across multiple platforms.
 When a path is used to interact with the underlying filesystem, the encoding used for the file path should be the platform default.
         </p>
  * <p>
-For more information on the Filesystem features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/filesystem.htm">File System Guide</a>.
+For more information on the Filesystem features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/filesystem.htm">File System Guide</a>.
         </p>
  *
  * @type FileSystemManager
@@ -5259,7 +5259,7 @@ on aspects that cannot be supported across multiple platforms.
 When a path is used to interact with the underlying filesystem, the encoding used for the file path should be the platform default.
         </p>
  * <p>
-For more information on the Filesystem features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/filesystem.htm">File System Guide</a>.
+For more information on the Filesystem features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/filesystem.htm">File System Guide</a>.
         </p>
  *
  * @type FileSystemManager
@@ -6790,7 +6790,7 @@ MessagePortManager.prototype = new Object();
 /**
  * The MessagePort API provides the functionality for communicating with other applications.
  * <p>
-For more information on the MessagePort features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/messageport.htm">MessagePort Guide</a>.
+For more information on the MessagePort features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/messageport.htm">MessagePort Guide</a>.
         </p>
  *
  * @type MessagePortManager
@@ -6936,7 +6936,7 @@ MessagePortManager.prototype.requestTrustedRemoteMessagePort = function(appId, r
 /**
  * The MessagePort API provides the functionality for communicating with other applications.
  * <p>
-For more information on the MessagePort features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/messageport.htm">MessagePort Guide</a>.
+For more information on the MessagePort features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/io_guide/messageport.htm">MessagePort Guide</a>.
         </p>
  *
  * @type MessagePortManager
@@ -7367,7 +7367,7 @@ To receive push notifications, follow the steps below:
  * <li>Getting notification data
  * </ul>
  * <p>
-For more information on the Push features, see <a href="http://127.0.0.1:50476/help/topic/http://127.0.0.1:50476/help/topic/org.tizen.guides/html/web/tizen/messaging/push_w.htm">Push Guide</a>.
+For more information on the Push features, see <a href="http://127.0.0.1:61297/help/topic/http://127.0.0.1:61297/help/topic/org.tizen.guides/html/web/tizen/messaging/push_w.htm">Push Guide</a>.
         </p>
  * <p>
 To use Push features the application needs the permission to access the Tizen Push servers.
@@ -7596,7 +7596,7 @@ To receive push notifications, follow the steps below:
  * <li>Getting notification data
  * </ul>
  * <p>
-For more information on the Push features, see <a href="http://127.0.0.1:50476/help/topic/http://127.0.0.1:50476/help/topic/org.tizen.guides/html/web/tizen/messaging/push_w.htm">Push Guide</a>.
+For more information on the Push features, see <a href="http://127.0.0.1:61297/help/topic/http://127.0.0.1:61297/help/topic/org.tizen.guides/html/web/tizen/messaging/push_w.htm">Push Guide</a>.
         </p>
  * <p>
 To use Push features the application needs the permission to access the Tizen Push servers.
@@ -8017,7 +8017,7 @@ Not all above properties may be available on every Tizen device. For instance, a
  * <li>WIFI_NETWORK - tizen.systeminfo.getCapability()
  * </ul>
  * <p>
-For more information on the SystemInfo features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/systeminfo.htm">System Information Guide</a>.
+For more information on the SystemInfo features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/systeminfo.htm">System Information Guide</a>.
         </p>
  *
  * @feature http://tizen.org/feature/camera.back.flash
@@ -9326,7 +9326,7 @@ Not all above properties may be available on every Tizen device. For instance, a
  * <li>WIFI_NETWORK - tizen.systeminfo.getCapability()
  * </ul>
  * <p>
-For more information on the SystemInfo features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/systeminfo.htm">System Information Guide</a>.
+For more information on the SystemInfo features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/systeminfo.htm">System Information Guide</a>.
         </p>
  *
  * @feature http://tizen.org/feature/camera.back.flash
@@ -9413,7 +9413,7 @@ This API can be used to get TZDate objects with full time zone support, convert 
 between timezones, retrieve available timezones.
         </p>
  * <p>
-For more information on the Time features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/time.htm">Time Guide</a>.
+For more information on the Time features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/time.htm">Time Guide</a>.
         </p>
  *
  * @type TimeUtil
@@ -10263,7 +10263,7 @@ This API can be used to get TZDate objects with full time zone support, convert 
 between timezones, retrieve available timezones.
         </p>
  * <p>
-For more information on the Time features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/time.htm">Time Guide</a>.
+For more information on the Time features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/time.htm">Time Guide</a>.
         </p>
  *
  * @type TimeUtil
@@ -10657,7 +10657,7 @@ WebAPIException.DATA_CLONE_ERR = new Number();
 /**
  * 16-bit error code.
  * <p>
-For the possible values of this attribute, see <a href="http://www.w3.ohttp://127.0.0.1:50476/help/topic/dom/#domexception">DOMException</a>.
+For the possible values of this attribute, see <a href="http://www.w3.ohttp://127.0.0.1:61297/help/topic/dom/#domexception">DOMException</a>.
             </p>
  *
  * @type Number
@@ -10677,7 +10677,7 @@ This attribute can have one of the following values:
  * <li>VerificationError - An error occurred in authentication and so the requested method cannot be completed.
  * </ul>
  * <p>
-For other possible values of this attribute, see the values defined in <a href="http://www.w3.ohttp://127.0.0.1:50476/help/topic/dom/#error-names-0">DOM error names</a>            </p>
+For other possible values of this attribute, see the values defined in <a href="http://www.w3.ohttp://127.0.0.1:61297/help/topic/dom/#error-names-0">DOM error names</a>            </p>
  *
  * @type String
  */
@@ -10785,7 +10785,7 @@ AttributeFilter.prototype.matchValue = new any();
 /**
  * 16-bit error code.
  * <p>
-Possible values are defined in <a href="http://www.w3.ohttp://127.0.0.1:50476/help/topic/dom/#domexception">DOMException</a>.
+Possible values are defined in <a href="http://www.w3.ohttp://127.0.0.1:61297/help/topic/dom/#domexception">DOMException</a>.
             </p>
  *
  * @type Number
@@ -10805,7 +10805,7 @@ This attribute can have one of the following values:
  * <li>VerificationError - An error occurred in authentication and so the requested method cannot be completed.
  * </ul>
  * <p>
-For other possible values of this attribute, see the values defined in <a href="http://www.w3.ohttp://127.0.0.1:50476/help/topic/dom/#error-names-0">DOM error names</a>            </p>
+For other possible values of this attribute, see the values defined in <a href="http://www.w3.ohttp://127.0.0.1:61297/help/topic/dom/#error-names-0">DOM error names</a>            </p>
  *
  * @type String
  */
@@ -10844,7 +10844,7 @@ Additionally, this API specifies the location in the ECMAScript hierarchy in whi
 the Tizen Web Device API is instantiated (<em>window.tizen</em>).
         </p>
  * <p>
-For more information on the Tizen features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/tizen_guide/tizen.htm">Tizen Guide</a>.  
+For more information on the Tizen features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/tizen_guide/tizen.htm">Tizen Guide</a>.  
         </p>
  *
  * @type Tizen
@@ -10881,7 +10881,7 @@ Additionally, this API specifies the location in the ECMAScript hierarchy in whi
 the Tizen Web Device API is instantiated (<em>window.tizen</em>).
         </p>
  * <p>
-For more information on the Tizen features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/tizen_guide/tizen.htm">Tizen Guide</a>.  
+For more information on the Tizen features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/tizen_guide/tizen.htm">Tizen Guide</a>.  
         </p>
  *
  * @type Tizen
@@ -12170,7 +12170,7 @@ TVInputDeviceManagerObject.prototype.tvinputdevice = new TVInputDeviceManager();
 /**
  * The name of the key, for example or .
  * <p>
-If the key is listed in the <a href="http://www.w3.ohttp://127.0.0.1:50476/help/topic/2014/WD-DOM-Level-3-Events-key-20140612">DOM Level 3 KeyboardEvent key Values</a> specification, the <em>name</em> attribute is equal to the <em>key value</em> specified there. (The <a href="http://www.w3.ohttp://127.0.0.1:50476/help/topic/2014/WD-DOM-Level-3-Events-key-20140612/#keys-media-controller">Media Controller Keys</a> section is the most relevant to the Input Device API)
+If the key is listed in the <a href="http://www.w3.ohttp://127.0.0.1:61297/help/topic/2014/WD-DOM-Level-3-Events-key-20140612">DOM Level 3 KeyboardEvent key Values</a> specification, the <em>name</em> attribute is equal to the <em>key value</em> specified there. (The <a href="http://www.w3.ohttp://127.0.0.1:61297/help/topic/2014/WD-DOM-Level-3-Events-key-20140612/#keys-media-controller">Media Controller Keys</a> section is the most relevant to the Input Device API)
             </p>
  * <p>
 If the "DOM Level 3 KeyboardEvent key Value" does not contain appropriate entry for the key, then the Input Device provides a device specific <em>name</em>.
@@ -12811,7 +12811,7 @@ A Tizen Web application includes a web view and the properties below of the web 
 Note that all the settings using the Web setting API is bound to your application; thus, no other applications are affected via the Web setting API calls within your application.
         </p>
  * <p>
-For more information on the Web setting features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/websetting.htm">Web Setting Guide</a>.
+For more information on the Web setting features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/websetting.htm">Web Setting Guide</a>.
         </p>
  *
  * @type WebSettingManager
@@ -12879,7 +12879,7 @@ A Tizen Web application includes a web view and the properties below of the web 
 Note that all the settings using the Web setting API is bound to your application; thus, no other applications are affected via the Web setting API calls within your application.
         </p>
  * <p>
-For more information on the Web setting features, see <a href="http://127.0.0.1:50476/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/websetting.htm">Web Setting Guide</a>.
+For more information on the Web setting features, see <a href="http://127.0.0.1:61297/help/topic/org.tizen.mobile.web.appprogramming/html/guide/sys_guide/websetting.htm">Web Setting Guide</a>.
         </p>
  *
  * @type WebSettingManager

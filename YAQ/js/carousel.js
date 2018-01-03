@@ -2,7 +2,7 @@ $(document).ready(function() {
 	$('.carousel').slick({
 		centerMode: true,
 		slidesToShow: 3,
-		focusOnSelect: false,
+		focusOnSelect: true,
 		centerPadding: '50px',
 		arrows: false,
 	});

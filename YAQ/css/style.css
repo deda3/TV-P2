@@ -3,6 +3,7 @@
 }
 
 html {
+	overflow: hidden;
 }
 
 body {
@@ -16,7 +17,19 @@ body {
 	order:1;
 }
 
-#second_page {
+#music_page {
+	order:2;
+}
+
+#movies_page {
+	order:2;
+}
+
+#sports_page {
+	order:2;
+}
+
+#tv_page {
 	order:2;
 }
 
@@ -30,7 +43,10 @@ body {
 }
 
 .title {
+	display: flex;
+	flex-direction: row;
 	height: 20vh;
+	width: 100vw;
 	order: 1;
 	font-weight: bold;
 	font-size: 5em;
@@ -38,9 +54,33 @@ body {
 	padding: 100px;
 }
 
-.title span {
-	margin-left: 10%;
-	left: auto;
+.content_text {
+	order: 1;
+	width: 70%;
+	margin-left: 100px;
+}
+
+.page_info {
+	order: 2;
+	font-weight: normal;
+	font-size: 25px;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.up {
+	order:1;
+}
+
+.down {
+	order:2;
+}
+
+.arrow_img {
+	padding-right: 20px;
+	padding-top: 20px;
 }
 
 .wrapper {
@@ -49,7 +89,7 @@ body {
 }
 
 .carousel {
-	top: 40%;
+	top: 45%;
     left: 55%;
     padding: -50px;
     transform: translate(-50%, -50%);
@@ -68,13 +108,40 @@ body {
 	border: none;
 }
 
-.panel{
+.panel {
 	width: 33%;
+	margin-top: 20px;
+}
+
+.panel img {
+	height: 500px;
+	border: 2px solid white;
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 0px 5px 1px white;
+	-moz-box-shadow: 0px 0px 5px 1px white;
+	box-shadow: 0px 0px 5px 1px white;
 }
 
 .panel:focus img {
-	height: 500px;
+	height: 700px;
 	border: 5px solid white;
-	margin-top: -50px;
+	margin-top: -100px;
 	margin-left: -25px;
+	-webkit-box-shadow: 0px 0px 15px 5px white;
+	-moz-box-shadow: 0px 0px 15px 5px white;
+	box-shadow: 0px 0px 15px 5px white;
+}
+
+.selected_category:focus img {
+	border: 5px solid #00ff00;	
+	-webkit-box-shadow: 0px 0px 15px 5px #0b7a1d;
+	-moz-box-shadow: 0px 0px 15px 5px #0b7a1d;
+	box-shadow: 0px 0px 15px 5px #0b7a1d;
+}
+
+.selected_category img {
+	border: 2px solid #00ff00;
+	-webkit-box-shadow: 0px 0px 5px 1px #00ff00;
+	-moz-box-shadow: 0px 0px 5px 1px #00ff00;
+	box-shadow: 0px 0px 5px 1px #00ff00;	
 }
