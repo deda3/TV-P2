@@ -186,6 +186,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>rdj9iI1nrjK9PPAEF8psmpSzEiUQ74QtP1YwdY9V8Ks=</DigestValue>
 </Reference>
+<Reference URI="img%2Fmenu.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>jWgKz7RUe2GAXT54RNY4uvCzrQlwSzJDvDc/QEXJvy8=</DigestValue>
+</Reference>
 <Reference URI="img%2Fside_arrows.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>oubr9v28p7Wc/lr4B/PrFWEuypbr54jbgZlJapcCEIw=</DigestValue>
@@ -196,7 +200,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/URQR6iemghEd0xbTpxRkfPfkHEeAl58Wh4gf+nck9Q=</DigestValue>
+<DigestValue>yLq5/m9g+KWqaWgsjB51zBz3+m2gTG+hCWCBmnbkr/c=</DigestValue>
 </Reference>
 <Reference URI="js%2Fcarousel.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -208,7 +212,7 @@
 </Reference>
 <Reference URI="js%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>g/8THjReX67dQS89JZ7XmX/sO3W/nOIIPu7oxXsGtHY=</DigestValue>
+<DigestValue>vjdaP7HPR31K1lTX7LAv7Rb2WTT31msWTnejE2+BSsA=</DigestValue>
 </Reference>
 <Reference URI="slick%2Fajax-loader.gif">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -271,9 +275,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-BYKrYGe2twpwaf+lQ3MC/jUcwuTe9s8f9Ly2sRLdqe2qx40vyESAaj0pwdK3yfDivj38cBpcjSPI
-pzBMo10tO/kO09GNg+LM5aa37cZZRxtfKWhRsY/8Nqabr5T5KSnwaGpV5kMCHW7e3iN6MZgPkDad
-rz31whdpVTngcncoThQ=
+a5iXnD5Dop+yGJv8Vewadq81HiBPS3GKpixKznbvxz0cv0jct586D2MLDgm+qcl8YjjAiy7MounA
+5v+CHxTmVv5iCu1U04rAGiRL+8fXw0efR1DQo/0GQ1KFikHvMVOBNOYwvXQ3JrjkHvz76ZGFQmhl
+4+DjEDjRmVxAqjWr/bA=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

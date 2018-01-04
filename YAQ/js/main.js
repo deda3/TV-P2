@@ -6,7 +6,7 @@ window.onload = function () {
 	$("#main_carousel").find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
 	// add eventListener for keydown
 	document.addEventListener('keydown', function(e) {
-		e.preventDefault();
+		//e.preventDefault();
 		console.log(e.keyCode);
 		switch(e.keyCode){
 		// center button
@@ -74,8 +74,10 @@ window.onload = function () {
 			});
 			break;	
 			// play button
-		case 0:
-			writeFile();
+		case 415:
+			// store the selected categories in the local storage
+			localStorage.setItem('categories', categories);
+			// begin the game
 			break;
 			// red button
 		case 403:
