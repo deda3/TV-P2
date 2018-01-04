@@ -1,0 +1,3 @@
+// array of selected categories
+var categories = []; 
+
