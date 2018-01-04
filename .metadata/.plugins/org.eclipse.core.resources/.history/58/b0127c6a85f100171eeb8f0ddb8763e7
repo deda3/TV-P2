@@ -8,44 +8,39 @@
     <title>Yet Another Quiz</title>
 
 	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>	
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>		
 </head>
 <body>
-	<div class=page id=home_page>
-		<div class=title>
-	 		<span class=content_text id=textbox>Home Page</span>
-	 		<div class=page_info>
-	 			<span class=up><img class=arrow_img src='img/up_arrow.png' width='20px'>See selected categories</span>
-	 			<span class=down><img class=arrow_img src='img/down_arrow.png' width='20px'>See subcategories</span>
-	 		</div>
-	 		
-	 	</div>
-	 	<div class=wrapper>
-		   	<div class=carousel id=main_carousel>
-		   	</div>
-		</div>
+	<div id="menu">
+		<div id="panel">Selected Categories</div>
+		<ul class="categories_list">
+		</ul>
 	</div>
-
 	<div class=page id=home_page>
 		<div class=title>
-	 		<span class=content_text id=textbox>Home Page</span>
+	 		<span class=content_text id=textbox>Build your own quiz!</span>
 	 		<div class=page_info>
-	 			<span class=up><img class=arrow_img src='img/up_arrow.png' width='20px'>See selected categories</span>
+	 			<span class=up><img class=arrow_img src='img/menu.png' width='20px'>Begin quiz</span>
+	 			<span class=up><img class=arrow_img src='img/OK.png' width='30px'>Select whole category</span>
+ 				<span class=up><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</span>
 	 			<span class=down><img class=arrow_img src='img/down_arrow.png' width='20px'>See subcategories</span>
 	 		</div>
-	 		
 	 	</div>
-	 	<div class=wrapper>
+		<div class=wrapper>
 		   	<div class=carousel id=main_carousel>
 		   	</div>
 		</div>
 	</div>
 	
 	<div class=page id=music_page>
+	
 		<div class=title>
 	 		<span class=content_text id=textbox>Music</span>
 	 		<div class=page_info>
+	 			<span class=up><img class=arrow_img src='img/menu.png' width='20px'>Begin quiz</span>
+	 			<span class=up><img class=arrow_img src='img/OK.png' width='30px'>Select subcategory</span>
+	 			<span class=up><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</span>
 	 			<span class=up><img class=arrow_img src='img/up_arrow.png' width='20px'>Go to categories</span>
 	 		</div>
 	 	</div>
@@ -59,6 +54,9 @@
 		<div class=title>
 	 		<span class=content_text id=textbox>Movies & TV Series</span>
 	 		<div class=page_info>
+	 			<span class=up><img class=arrow_img src='img/menu.png' width='20px'>Begin quiz</span>
+	 			<span class=up><img class=arrow_img src='img/OK.png' width='30px'>Select subcategory</span>
+	 			<span class=up><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</span>
 	 			<span class=up><img class=arrow_img src='img/up_arrow.png' width='20px'>Go to categories</span>
  			</div>
 	 	</div>
@@ -76,6 +74,9 @@
 		<div class=title>
 	 		<span class=content_text id=textbox>Sports</span>
 	 		<div class=page_info>
+	 			<span class=up><img class=arrow_img src='img/menu.png' width='20px'>Begin quiz</span>
+	 			<span class=up><img class=arrow_img src='img/OK.png' width='30px'>Select subcategory</span>
+	 			<span class=up><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</span>
 	 			<span class=up><img class=arrow_img src='img/up_arrow.png' width='20px'>Go to categories</span>
 	 		</div>
 	 	</div>
@@ -93,6 +94,9 @@
 		<div class=title>
 	 		<span class=content_text id=textbox>TV Programs</span>
 	 		<div class=page_info>
+	 			<span class=up><img class=arrow_img src='img/menu.png' width='20px'>Begin quiz</span>
+	 			<span class=up><img class=arrow_img src='img/OK.png' width='30px'>Select subcategory</span>
+	 			<span class=up><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</span>
 	 			<span class=up><img class=arrow_img src='img/up_arrow.png' width='20px'>Go to categories</span>
 	 		</div>
 	 	</div>
@@ -107,7 +111,7 @@
 	</div>
 	
 	<script type="text/javascript" src="js/jquery.js"></script>
- 	<!--  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+ 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
 	<script type="text/javascript">
 		// create main page
