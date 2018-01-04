@@ -1,13 +1,17 @@
 //array of selected categories
 var categories = []; 
 
+//By default menu is closed
+//So set this to false
+var menuOpen = false;
+
 window.onload = function () {
 	// initialization
 	$("#main_carousel").find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
 	// add eventListener for keydown
 	document.addEventListener('keydown', function(e) {
-		//e.preventDefault();
-		console.log(e.keyCode);
+		e.preventDefault();
+		//console.log(e.keyCode);
 		switch(e.keyCode){
 		// center button
 		case 13: 
@@ -44,12 +48,15 @@ window.onload = function () {
 					selectSubcategories('unselect', id);
 				}
 			}
+			// refresh list of selected categories
+			manageListPanel();
+			console.log(categories);
 			$(".panel:focus").next().focus();
-			// left arrow
+		// left arrow
 		case 37:
 			$(".panel:focus").prev().focus();
 			break;
-			// up arrow
+		// up arrow
 		case 38:
 			$('html,body').animate({
 				scrollTop: 0
@@ -57,11 +64,11 @@ window.onload = function () {
 				$("#main_carousel").find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
 			});
 			break; 	
-			// right arrow
+		// right arrow
 		case 39:
 			$(".panel:focus").next().focus();	
 			break;
-			// down arrow
+		// down arrow
 		case 40:
 			// get the category id the user selected
 			var id = getId();
@@ -73,14 +80,15 @@ window.onload = function () {
 				$(subcat.concat("carousel")).find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
 			});
 			break;	
-			// play button
+		// play button
 		case 415:
-			// store the selected categories in the local storage
+			// store the categories in localstorage
 			localStorage.setItem('categories', categories);
-			// begin the game
 			break;
-			// red button
-		case 403:
+		// info button
+		case 457:
+			$("#menu").toggleClass("open");
+		    menuOpen =! menuOpen;
 			break;
 		}
 	});    
@@ -234,6 +242,100 @@ function pushSubcategories(string, id) {
 		}
 		break;
 	}
+}
+
+function manageListPanel() {
+	var string;
+	// empty the list in the html
+	$(".categories_list").empty();
+	// fill the list in the html
+	categories.forEach(function(cat){
+		switch(cat){
+		case '00':
+			string = "Music: R&B";
+			break;
+		case '01':
+			string = "Music: Hip - Hop | Rap";
+			break;
+		case '02': 
+			string = "Music: Classical"
+			break;
+		case '03': 
+			string = "Music: Electronical"
+			break;
+		case '04':
+			string = "Music: Pop | Rock";
+			break;
+		case '05':
+			string = "Music: Latin";
+			break;
+		case '10':
+			string = "Movies: Action";
+			break;
+		case '10':
+			string = "Movies: Comedy";
+			break;
+		case '10':
+			string = "Movies: Historical";
+			break;
+		case '10':
+			string = "Movies: Horror";
+			break;
+		case '10':
+			string = "Movies: Sci-Fi";
+			break;
+		case '10':
+			string = "Movies: Fantasy";
+			break;
+		case '10':
+			string = "Movies: Western";
+			break;
+		case '10':
+			string = "Movies: Suspense";
+			break;
+		case '10':
+			string = "Movies: Romance";
+			break;
+		case '19':
+			string = "Movies: Animation";
+			break;
+		case '20':
+			string = "TV: News";
+			break;
+		case '20':
+			string = "TV: Gossip";
+			break;
+		case '20':
+			string = "TV: Reality Shows";
+			break;
+		case '20':
+			string = "TV: Game Shows";
+			break;
+		case '24':
+			string = "TV: Late Nights";
+			break;
+		case '30':
+			string = "Sports: Olympics";
+			break;
+		case '31':
+			string = "Sports: Football";
+			break;
+		case '32':
+			string = "Sports: Basketball";
+			break;
+		case '33':
+			string = "Sports: Tennis";
+			break;
+		case '34':
+			string = "Sports: F1";
+			break;
+		case '35':
+			string = "Sports: Moto GP";
+			break;
+		}
+		
+		$(".categories_list").append("<li>" + string + "</li>");
+	});
 }
 
 function writeFile(){
