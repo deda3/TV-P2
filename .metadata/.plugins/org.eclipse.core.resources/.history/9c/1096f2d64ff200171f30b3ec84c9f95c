@@ -218,7 +218,7 @@ function pushSubcategories(string, id) {
 			// find the category to substract in the array and substract it
 			var index = categories.indexOf(id.concat(i.toString()));
 			if (index !== -1) {
-				removed = categories.splice(index, 1);
+				removed = categories.splice(index);
 			}			
 		}
 	}
