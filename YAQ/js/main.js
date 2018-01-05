@@ -21,7 +21,7 @@ window.onload = function () {
 				$(".panel:focus").addClass("selected_category");
 				var id = getId();
 				// if the id is only one character, push all the subcategories
-				if (id.length === 1) {
+				if (id.length == 1) {
 					// erase all the elements already selected before selecting them all.
 					// this is to avoid pushing an element twice
 					pushSubcategories('erase', id);
@@ -38,14 +38,14 @@ window.onload = function () {
 				$(".panel:focus").removeClass("selected_category");
 				var id = getId();
 				// if the id is only one character, erase all the subcategories
-				if (id.length === 1) {
+				if (id.length == 1) {
 					pushSubcategories('erase', id);
 				} else {
 					categories.splice(categories.indexOf(id.toString()),1);
 				}
 				// unselect the subcategory panels if needed
 				// subcategory string identifiers have more than 11 characters
-				if($(".panel:focus").children().attr('src').length === 11) {
+				if($(".panel:focus").children().attr('src').length == 11) {
 					selectSubcategories('unselect', id);
 				}
 			}
@@ -111,7 +111,7 @@ function getId() {
 }
 
 function loadSecondPage(id) {
-	var string;
+	var string
 	switch(id) {
 	// show elements in music page and hide every other
 	case '0':
@@ -129,21 +129,21 @@ function loadSecondPage(id) {
 		$("#tv_page").hide();
 		string = "#movies_";	
 		break;
-		// show elements in sports page and hide every other
-	case '2': 
-		$("#music_page").hide();
-		$("#movies_page").hide();
-		$("#sports_page").show();
-		$("#tv_page").hide();
-		string = "#sports_";
-		break;
 		// show elements in tv page and hide every other
-	case '3' : 
+	case '2': 
 		$("#music_page").hide();
 		$("#movies_page").hide();
 		$("#sports_page").hide();
 		$("#tv_page").show();
-		string = "#tv_";	
+		string = "#tv_";
+		break;
+		// show elements in sports page and hide every other
+	case '3' : 
+		$("#music_page").hide();
+		$("#movies_page").hide();
+		$("#sports_page").show();
+		$("#tv_page").hide();
+		string = "#sports_";	
 		break;
 	}
 	return string;
@@ -154,7 +154,7 @@ function selectSubcategories(string, id) {
 	// select or unselect every subcategory in the music page
 	case '0':
 		$("#music_page").children(".wrapper").children(".carousel").children(".slick-list").children(".slick-track").children(".panel").each(function (){
-			if(string.localeCompare("select") === 0) {
+			if(string.localeCompare("select") == 0) {
 				$(this).addClass("selected_category");
 			} else {
 				$(this).removeClass("selected_category");
@@ -164,17 +164,7 @@ function selectSubcategories(string, id) {
 		// select or unselect every subcategory in the movies page
 	case '1':
 		$("#movies_page").children(".wrapper").children(".carousel").children(".slick-list").children(".slick-track").children(".panel").each(function (){
-			if(string.localeCompare("select") === 0) {
-				$(this).addClass("selected_category");
-			} else {
-				$(this).removeClass("selected_category");
-			}		
-		});
-		break;
-		// select or unselect every subcategory in the sports page
-	case '2': 
-		$("#sports_page").children(".wrapper").children(".carousel").children(".slick-list").children(".slick-track").children(".panel").each(function (){
-			if(string.localeCompare("select") === 0) {
+			if(string.localeCompare("select") == 0) {
 				$(this).addClass("selected_category");
 			} else {
 				$(this).removeClass("selected_category");
@@ -182,9 +172,19 @@ function selectSubcategories(string, id) {
 		});
 		break;
 		// select or unselect every subcategory in the tv programs page
-	case '3': 
+	case '2': 
 		$("#tv_page").children(".wrapper").children(".carousel").children(".slick-list").children(".slick-track").children(".panel").each(function (){
-			if(string.localeCompare("select") === 0) {
+			if(string.localeCompare("select") == 0) {
+				$(this).addClass("selected_category");
+			} else {
+				$(this).removeClass("selected_category");
+			}		
+		});
+		break;
+		// select or unselect every subcategory in the sports page
+	case '3': 
+		$("#sports_page").children(".wrapper").children(".carousel").children(".slick-list").children(".slick-track").children(".panel").each(function (){
+			if(string.localeCompare("select") == 0) {
 				$(this).addClass("selected_category");
 			} else {
 				$(this).removeClass("selected_category");
@@ -195,60 +195,32 @@ function selectSubcategories(string, id) {
 }
 
 function pushSubcategories(string, id) {
+	var num;
 	// push every subcategory automatically, the amount of subcategories depends on the category they refere to
 	switch(id) {
 	case '0':
-		for (var i = 0; i < 6; i++) {
-			if(string.localeCompare("push") === 0) {
-				categories.push(id.concat(i.toString()));
-			}else{
-				// find the category to substract in the array and substract it
-				var index = categories.indexOf(id.concat(i.toString()));
-				if (index !== -1) {
-					removed = categories.splice(index, 1);
-				}
-			}
-		}
+		num = 6;
 		break;
 	case '1':
-		for (var i = 0; i < 10; i++) {
-			if(string.localeCompare("push") === 0) {
-				categories.push(id.concat(i.toString()));
-			}else{
-				// find the category to substract in the array and substract it
-				var index = categories.indexOf(id.concat(i.toString()));
-				if (index !== -1) {
-					removed = categories.splice(index, 1);
-				}			
-			}
-		}
+		num = 9;
 		break;
 	case '2':
-		for (var i = 0; i < 6; i++) {
-			if(string.localeCompare("push") === 0) {
-				categories.push(id.concat(i.toString()));
-			}else{
-				// find the category to substract in the array and substract it
-				var index = categories.indexOf(id.concat(i.toString()));
-				if (index !== -1) {
-					removed = categories.splice(index, 1);
-				}			
-			}
-		}
+		num = 5;
 		break;
 	case '3':
-		for (var i = 0; i < 5; i++) {
-			if(string.localeCompare("push") === 0) {
-				categories.push(id.concat(i.toString()));
-			}else{
-				// find the category to substract in the array and substract it
-				var index = categories.indexOf(id.concat(i.toString()));
-				if (index !== -1) {
-					removed = categories.splice(index);
-				}			
-			}
-		}
+		num = 6;
 		break;
+	}
+	for (var i = 0; i < num; i++) {
+		if(string.localeCompare("push") == 0) {
+			categories.push(id.concat(i.toString()));
+		}else{
+			// find the category to substract in the array and substract it
+			var index = categories.indexOf(id.concat(i.toString()));
+			if (index != -1) {
+				removed = categories.splice(index);
+			}			
+		}
 	}
 }
 
@@ -260,25 +232,25 @@ function manageListPanel() {
 	categories.forEach(function(cat){
 		switch(cat){
 		case '00':
-			string = "Music: R&B";
-			break;
-		case '01':
-			string = "Music: Hip - Hop | Rap";
-			break;
-		case '02': 
-			string = "Music: Classical";
-			break;
-		case '03': 
 			string = "Music: Electronical";
 			break;
-		case '04':
-			string = "Music: Pop | Rock";
+		case '01':
+			string = "Music: Classical";
 			break;
-		case '05':
+		case '02': 
+			string = "Music: Hip-Hop | Rap";
+			break;
+		case '03': 
 			string = "Music: Latin";
 			break;
+		case '04':
+			string = "Music: R&B";
+			break;
+		case '05':
+			string = "Music: Pop | Rock";
+			break;
 		case '10':
-			string = "Movies: Action";
+			string = "Movies: Action & Adventure";
 			break;
 		case '11':
 			string = "Movies: Comedy";
@@ -296,7 +268,7 @@ function manageListPanel() {
 			string = "Movies: Fantasy";
 			break;
 		case '16':
-			string = "Movies: Western";
+			string = "Movies: Animation";
 			break;
 		case '17':
 			string = "Movies: Suspense";
@@ -304,41 +276,38 @@ function manageListPanel() {
 		case '18':
 			string = "Movies: Romance";
 			break;
-		case '19':
-			string = "Movies: Animation";
-			break;
 		case '20':
-			string = "Sports: Olympics";
-			break;
-		case '21':
-			string = "Sports: Football";
-			break;
-		case '22':
-			string = "Sports: Basketball";
-			break;
-		case '23':
-			string = "Sports: Tennis";
-			break;
-		case '24':
-			string = "Sports: F1";
-			break;
-		case '25':
-			string = "Sports: Moto GP";
-			break;
-		case '30':
 			string = "TV: News";
 			break;
-		case '31':
+		case '21':
 			string = "TV: Gossip";
 			break;
-		case '32':
+		case '22':
 			string = "TV: Reality Shows";
 			break;
-		case '33':
+		case '23':
 			string = "TV: Game Shows";
 			break;
+		case '24':
+			string = "TV: Entertainment";
+			break;
+		case '30':
+			string = "Sports: Olympics";
+			break;
+		case '31':
+			string = "Sports: Football";
+			break;
+		case '32':
+			string = "Sports: Basketball";
+			break;
+		case '33':
+			string = "Sports: Tennis";
+			break;
 		case '34':
-			string = "TV: Late Nights";
+			string = "Sports: F1";
+			break;
+		case '35':
+			string = "Sports: Moto GP";
 			break;
 		}
 		
@@ -353,14 +322,14 @@ function writeFile(){
 		documents_obj = obj;
 		// delete the file if it exists
 		newFile = documents_obj.resolve('categories.json');
-		if(newFile !== null) {
+		if(newFile != null) {
 			documents_obj.deleteFile(newFile.fullPath, function(){
 				console.log('File categories.json deleted');
 			}, onError);
 		}
 		// create a new file to store the categories
 		newFile = documents_obj.createFile('categories.json');
-		if (newFile !== null) {
+		if (newFile != null) {
 			console.log('File categories.json created');
 			newFile.openStream('rw', function(fs){
 				fs.write('{"categories" : [' + JSON.stringify(categories) + ']}');
@@ -378,7 +347,7 @@ function readFile(filePath) {
 		documents_obj = obj;
 		// find the given path to file and parse it to a JS object
 		file = obj.resolve(filePath);
-		if(file !== null){
+		if(file != null){
 			file.openStream('r',function(fs){
 				var obj = JSON.parse(fs.read(file.fileSize));
 				fs.close();
@@ -390,4 +359,4 @@ function readFile(filePath) {
 
 var onError = function(e){
 	console.log(e.name + ': ' + e.message);
-};
+}

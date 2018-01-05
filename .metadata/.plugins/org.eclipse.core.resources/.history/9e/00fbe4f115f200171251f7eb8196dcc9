@@ -28,7 +28,7 @@
 		</div>
 		<div class=page_info>
 	 			<nav><img class=arrow_img src='img/play.png' width='20px'>Begin quiz</nav>
-	 			<nav><img class=arrow_img src='img/info.png' width='20px'>See selected categories</nav>
+	 			<nav><img class=arrow_img src='img/menu.png' width='20px'>See selected categories</nav>
 	 			<nav><img class=arrow_img src='img/OK.png' width='30px'>Select whole category</nav>
  				<nav><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</nav>
 	 			<nav><img class=arrow_img src='img/down_arrow.png' width='20px'>See subcategories</nav>
@@ -46,7 +46,6 @@
 		</div>
  		<div class=page_info>
  			<nav><img class=arrow_img src='img/play.png' width='20px'>Begin quiz</nav>
- 			<nav><img class=arrow_img src='img/info.png' width='20px'>See selected categories</nav>
 	 		<nav><img class=arrow_img src='img/OK.png' width='30px'>Select subcategory</nav>
 	 		<nav><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</nav>
 	 		<nav><img class=arrow_img src='img/up_arrow.png' width='20px'>Go to categories</nav>
@@ -64,7 +63,6 @@
 		</div>
  		<div class=page_info>
 			<nav><img class=arrow_img src='img/play.png' width='20px'>Begin quiz</nav>
-			<nav><img class=arrow_img src='img/info.png' width='20px'>See selected categories</nav>
 			<nav><img class=arrow_img src='img/OK.png' width='30px'>Select subcategory</nav>
 			<nav><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</nav>
 			<nav><img class=arrow_img src='img/up_arrow.png' width='20px'>Go to categories</nav>
@@ -82,7 +80,6 @@
 		</div>
 		<div class=page_info>
  			<nav><img class=arrow_img src='img/play.png' width='20px'>Begin quiz</nav>
- 			<nav><img class=arrow_img src='img/info.png' width='20px'>See selected categories</nav>
  			<nav><img class=arrow_img src='img/OK.png' width='30px'>Select subcategory</nav>
  			<nav><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</nav>
  			<nav><img class=arrow_img src='img/up_arrow.png' width='20px'>Go to categories</nav>
@@ -100,16 +97,15 @@
 		</div>
 		<div class=page_info>
  			<nav><img class=arrow_img src='img/play.png' width='20px'>Begin quiz</nav>
- 			<nav><img class=arrow_img src='img/info.png' width='20px'>See selected categories</nav>
  			<nav><img class=arrow_img src='img/OK.png' width='30px'>Select subcategory</nav>
  			<nav><img class=arrow_img src='img/side_arrows.png' width='30px'>Navigate</nav>
  			<nav><img class=arrow_img src='img/up_arrow.png' width='20px'>Go to categories</nav>
  		</div>
 	</div>
 	
-	<!-- <script type="text/javascript" src="js/jquery.js"></script> -->
- 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+ 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
 	<script type="text/javascript" src="js/preparePage.js"></script>
 	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
