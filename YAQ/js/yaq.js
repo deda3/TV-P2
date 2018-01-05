@@ -1,127 +1,4 @@
 
-var hardcoded_list = [
-{
-    "videoPath": "video/1400.mp4",
-    "question": "What Star Wars movie does this fragment belong to?",
-    "answers": [
-      "The Force Awakens",
-      "Return of the Jedi",
-      "Rogue One",
-      "Actually it's Star Trek"
-    ],
-    "correctAnswer": "The Force Awakens"
-  },
-  {
-    "videoPath": "video/1401.mp4",
-    "question": "Who is the actor behind the mask?",
-    "answers": [
-      "Jim Carrey",
-      "Hugh Jackman",
-      "Ryan Reynolds",
-      "Leticia Sabater"
-    ],
-    "correctAnswer": "Ryan Reynolds"
-  },
-  {
-    "videoPath": "video/1402.mp4",
-    "question": "Which actor won an Oscar for his performance in The Dark Knight?",
-    "answers": [
-      "Christian Bale",
-      "Heath Ledger",
-      "Michael Caine",
-      "Antonio Resines"
-    ],
-    "correctAnswer": "Heath Ledger"
-  },
-  {
-    "videoPath": "video/1403.mp4",
-    "question": "What year does Marty McFly travel to in Back to the Future II?",
-    "answers": [
-                "2014",
-                "2015",
-                "2035",
-                "Actually it's all a dream"
-              ],
-              "correctAnswer": "2015"
-  },
-  {
-	  "videoPath": "video/1400.mp4",
-      "question": "What Star Wars movie does this fragment belong to?",
-      "answers": [
-        "The Force Awakens",
-        "Return of the Jedi",
-        "Rogue One",
-        "Actually it's Star Trek"
-      ],
-      "correctAnswer": "The Force Awakens"
-    },
-    {
-      "videoPath": "video/1401.mp4",
-      "question": "Who is the actor behind the mask?",
-      "answers": [
-        "Jim Carrey",
-        "Hugh Jackman",
-        "Ryan Reynolds",
-        "Leticia Sabater"
-      ],
-      "correctAnswer": "Ryan Reynolds"
-    },
-    {
-      "videoPath": "video/1402.mp4",
-      "question": "Which actor won an Oscar for his performance in The Dark Knight?",
-      "answers": [
-        "Christian Bale",
-        "Heath Ledger",
-        "Michael Caine",
-        "Antonio Resines"
-      ],
-      "correctAnswer": "Heath Ledger"
-    },
-    {
-      "videoPath": "video/1403.mp4",
-      "question": "What year does Marty McFly travel to in Back to the Future II?",
-      "answers": [
-        "2014",
-        "2015",
-        "2035",
-        "Actually it's all a dream"
-      ],
-      "correctAnswer": "2015"
-    },
-    {
-        "videoPath": "video/1400.mp4",
-        "question": "What Star Wars movie does this fragment belong to?",
-        "answers": [
-          "The Force Awakens",
-          "Return of the Jedi",
-          "Rogue One",
-          "Actually it's Star Trek"
-        ],
-        "correctAnswer": "The Force Awakens"
-      },
-      {
-        "videoPath": "video/1401.mp4",
-        "question": "Who is the actor behind the mask?",
-        "answers": [
-          "Jim Carrey",
-          "Hugh Jackman",
-          "Ryan Reynolds",
-          "Leticia Sabater"
-        ],
-        "correctAnswer": "Ryan Reynolds"
-      },
-      {
-        "videoPath": "video/1402.mp4",
-        "question": "Which actor won an Oscar for his performance in The Dark Knight?",
-        "answers": [
-          "Christian Bale",
-          "Heath Ledger",
-          "Michael Caine",
-          "Antonio Resines"
-        ],
-        "correctAnswer": "Heath Ledger"
-      }
-];
 var hardcoded_video = 'video/1500.mp4';
 
 function shuffle(array) {
@@ -168,11 +45,12 @@ function cleanScreen(){
 }
 
 function getSelectedCategories(){
+	return 
 	return JSON.parse(localStorage.getItem('categories'));
 }
 
 function loadAllJSON(){
-	/*var path = 'json/questions.json';
+	var path = 'json/questions.json';
 	var xmlhttp = new XMLHttpRequest();
 	
 	xmlhttp.onreadystatechange = function(){
@@ -185,9 +63,7 @@ function loadAllJSON(){
 	
 	xmlhttp.open("GET", path, true);
 	xmlhttp.overrideMimeType("application/json");
-	xmlhttp.send();*/
-	
-	initGame(null);
+	xmlhttp.send();
 }
 
 var timer;
@@ -419,7 +295,6 @@ window.onload = function () {
 };
 
 function initGame(questions){
-	/*
 	var selectedQuestions = [];
 	
 	for(var i = 0; i < selectedCategories.length; i++){
@@ -444,11 +319,17 @@ function initGame(questions){
 		});
 	}
 	
-	selectedQuestions = shuffle(selectedQuestions);
+	var validQuestions = [];
 	
-	elevenQuestions = selectedQuestions.slice(0,10);
-	*/
-	elevenQuestions = hardcoded_list;
+	for (var i = 0; i < selectedQuestions.length; i++) {
+	    if (selectedQuestions[i].videoPath) {
+	    	validQuestions.push(selectedQuestions[i]);
+	    }
+	  }
+	
+	validQuestions = shuffle(validQuestions);
+	
+	elevenQuestions = validQuestions.slice(0,10);
 	
 	index = 0;
 	compt = 1;

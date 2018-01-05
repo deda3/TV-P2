@@ -21,7 +21,7 @@ window.onload = function () {
 				$(".panel:focus").addClass("selected_category");
 				var id = getId();
 				// if the id is only one character, push all the subcategories
-				if (id.length == 1) {
+				if (id.length === 1) {
 					// erase all the elements already selected before selecting them all.
 					// this is to avoid pushing an element twice
 					pushSubcategories('erase', id);
@@ -38,14 +38,14 @@ window.onload = function () {
 				$(".panel:focus").removeClass("selected_category");
 				var id = getId();
 				// if the id is only one character, erase all the subcategories
-				if (id.length == 1) {
+				if (id.length === 1) {
 					pushSubcategories('erase', id);
 				} else {
 					categories.splice(categories.indexOf(id.toString()),1);
 				}
 				// unselect the subcategory panels if needed
 				// subcategory string identifiers have more than 11 characters
-				if($(".panel:focus").children().attr('src').length == 11) {
+				if($(".panel:focus").children().attr('src').length === 11) {
 					selectSubcategories('unselect', id);
 				}
 			}
@@ -111,7 +111,7 @@ function getId() {
 }
 
 function loadSecondPage(id) {
-	var string
+	var string;
 	switch(id) {
 	// show elements in music page and hide every other
 	case '0':
@@ -154,7 +154,7 @@ function selectSubcategories(string, id) {
 	// select or unselect every subcategory in the music page
 	case '0':
 		$("#music_page").children(".wrapper").children(".carousel").children(".slick-list").children(".slick-track").children(".panel").each(function (){
-			if(string.localeCompare("select") == 0) {
+			if(string.localeCompare("select") === 0) {
 				$(this).addClass("selected_category");
 			} else {
 				$(this).removeClass("selected_category");
@@ -164,7 +164,7 @@ function selectSubcategories(string, id) {
 		// select or unselect every subcategory in the movies page
 	case '1':
 		$("#movies_page").children(".wrapper").children(".carousel").children(".slick-list").children(".slick-track").children(".panel").each(function (){
-			if(string.localeCompare("select") == 0) {
+			if(string.localeCompare("select") === 0) {
 				$(this).addClass("selected_category");
 			} else {
 				$(this).removeClass("selected_category");
@@ -174,7 +174,7 @@ function selectSubcategories(string, id) {
 		// select or unselect every subcategory in the tv programs page
 	case '2': 
 		$("#tv_page").children(".wrapper").children(".carousel").children(".slick-list").children(".slick-track").children(".panel").each(function (){
-			if(string.localeCompare("select") == 0) {
+			if(string.localeCompare("select") === 0) {
 				$(this).addClass("selected_category");
 			} else {
 				$(this).removeClass("selected_category");
@@ -184,7 +184,7 @@ function selectSubcategories(string, id) {
 		// select or unselect every subcategory in the sports page
 	case '3': 
 		$("#sports_page").children(".wrapper").children(".carousel").children(".slick-list").children(".slick-track").children(".panel").each(function (){
-			if(string.localeCompare("select") == 0) {
+			if(string.localeCompare("select") === 0) {
 				$(this).addClass("selected_category");
 			} else {
 				$(this).removeClass("selected_category");
@@ -212,12 +212,12 @@ function pushSubcategories(string, id) {
 		break;
 	}
 	for (var i = 0; i < num; i++) {
-		if(string.localeCompare("push") == 0) {
+		if(string.localeCompare("push") === 0) {
 			categories.push(id.concat(i.toString()));
 		}else{
 			// find the category to substract in the array and substract it
 			var index = categories.indexOf(id.concat(i.toString()));
-			if (index != -1) {
+			if (index !== -1) {
 				removed = categories.splice(index);
 			}			
 		}
@@ -322,14 +322,14 @@ function writeFile(){
 		documents_obj = obj;
 		// delete the file if it exists
 		newFile = documents_obj.resolve('categories.json');
-		if(newFile != null) {
+		if(newFile !== null) {
 			documents_obj.deleteFile(newFile.fullPath, function(){
 				console.log('File categories.json deleted');
 			}, onError);
 		}
 		// create a new file to store the categories
 		newFile = documents_obj.createFile('categories.json');
-		if (newFile != null) {
+		if (newFile !== null) {
 			console.log('File categories.json created');
 			newFile.openStream('rw', function(fs){
 				fs.write('{"categories" : [' + JSON.stringify(categories) + ']}');
@@ -347,7 +347,7 @@ function readFile(filePath) {
 		documents_obj = obj;
 		// find the given path to file and parse it to a JS object
 		file = obj.resolve(filePath);
-		if(file != null){
+		if(file !== null){
 			file.openStream('r',function(fs){
 				var obj = JSON.parse(fs.read(file.fileSize));
 				fs.close();
@@ -359,4 +359,4 @@ function readFile(filePath) {
 
 var onError = function(e){
 	console.log(e.name + ': ' + e.message);
-}
+};
