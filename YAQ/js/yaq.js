@@ -1,20 +1,178 @@
 
-function shuffle(a) {
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
-    }
+var hardcoded_list = [
+{
+    "videoPath": "video/1400.mp4",
+    "question": "What Star Wars movie does this fragment belong to?",
+    "answers": [
+      "The Force Awakens",
+      "Return of the Jedi",
+      "Rogue One",
+      "Actually it's Star Trek"
+    ],
+    "correctAnswer": "The Force Awakens"
+  },
+  {
+    "videoPath": "video/1401.mp4",
+    "question": "Who is the actor behind the mask?",
+    "answers": [
+      "Jim Carrey",
+      "Hugh Jackman",
+      "Ryan Reynolds",
+      "Leticia Sabater"
+    ],
+    "correctAnswer": "Ryan Reynolds"
+  },
+  {
+    "videoPath": "video/1402.mp4",
+    "question": "Which actor won an Oscar for his performance in The Dark Knight?",
+    "answers": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Michael Caine",
+      "Antonio Resines"
+    ],
+    "correctAnswer": "Heath Ledger"
+  },
+  {
+    "videoPath": "video/1403.mp4",
+    "question": "What year does Marty McFly travel to in Back to the Future II?",
+    "answers": [
+                "2014",
+                "2015",
+                "2035",
+                "Actually it's all a dream"
+              ],
+              "correctAnswer": "2015"
+  },
+  {
+	  "videoPath": "video/1400.mp4",
+      "question": "What Star Wars movie does this fragment belong to?",
+      "answers": [
+        "The Force Awakens",
+        "Return of the Jedi",
+        "Rogue One",
+        "Actually it's Star Trek"
+      ],
+      "correctAnswer": "The Force Awakens"
+    },
+    {
+      "videoPath": "video/1401.mp4",
+      "question": "Who is the actor behind the mask?",
+      "answers": [
+        "Jim Carrey",
+        "Hugh Jackman",
+        "Ryan Reynolds",
+        "Leticia Sabater"
+      ],
+      "correctAnswer": "Ryan Reynolds"
+    },
+    {
+      "videoPath": "video/1402.mp4",
+      "question": "Which actor won an Oscar for his performance in The Dark Knight?",
+      "answers": [
+        "Christian Bale",
+        "Heath Ledger",
+        "Michael Caine",
+        "Antonio Resines"
+      ],
+      "correctAnswer": "Heath Ledger"
+    },
+    {
+      "videoPath": "video/1403.mp4",
+      "question": "What year does Marty McFly travel to in Back to the Future II?",
+      "answers": [
+        "2014",
+        "2015",
+        "2035",
+        "Actually it's all a dream"
+      ],
+      "correctAnswer": "2015"
+    },
+    {
+        "videoPath": "video/1400.mp4",
+        "question": "What Star Wars movie does this fragment belong to?",
+        "answers": [
+          "The Force Awakens",
+          "Return of the Jedi",
+          "Rogue One",
+          "Actually it's Star Trek"
+        ],
+        "correctAnswer": "The Force Awakens"
+      },
+      {
+        "videoPath": "video/1401.mp4",
+        "question": "Who is the actor behind the mask?",
+        "answers": [
+          "Jim Carrey",
+          "Hugh Jackman",
+          "Ryan Reynolds",
+          "Leticia Sabater"
+        ],
+        "correctAnswer": "Ryan Reynolds"
+      },
+      {
+        "videoPath": "video/1402.mp4",
+        "question": "Which actor won an Oscar for his performance in The Dark Knight?",
+        "answers": [
+          "Christian Bale",
+          "Heath Ledger",
+          "Michael Caine",
+          "Antonio Resines"
+        ],
+        "correctAnswer": "Heath Ledger"
+      }
+];
+var hardcoded_video = 'video/1500.mp4';
+
+function shuffle(array) {
+	var currentIndex = array.length, temporaryValue, randomIndex;
+	
+	while (0 !== currentIndex) {
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+		
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	return array;
 }
 
 function cleanScreen(){
 	document.getElementById('container').innerHTML = '';
+	
+	var videoContainer = document.createElement('div');
+	videoContainer.id = 'video-container';
+	document.getElementById('container').appendChild(videoContainer);
+	
+	var numContainer = document.createElement('div');
+	numContainer.id = 'num-container';
+	document.getElementById('container').appendChild(numContainer);
+	
+	var timeContainer = document.createElement('div');
+	timeContainer.id = 'time-container';
+	document.getElementById('container').appendChild(timeContainer);
+	
+	var questionContainer = document.createElement('div');
+	questionContainer.id = 'question-container';
+	document.getElementById('container').appendChild(questionContainer);
+	
+	var answersContainer = document.createElement('div');
+	answersContainer.id = 'answers-container';
+	document.getElementById('container').appendChild(answersContainer);
+	
+	var lifelinesContainer = document.createElement('div');
+	lifelinesContainer.id = 'lifelines-container';	
+	document.getElementById('container').appendChild(lifelinesContainer);
+}
+
+function getSelectedCategories(){
+	return JSON.parse(localStorage.getItem('categories'));
 }
 
 function loadAllJSON(){
-	var path = 'json/questions.json';
+	/*var path = 'json/questions.json';
 	var xmlhttp = new XMLHttpRequest();
 	
 	xmlhttp.onreadystatechange = function(){
@@ -27,12 +185,16 @@ function loadAllJSON(){
 	
 	xmlhttp.open("GET", path, true);
 	xmlhttp.overrideMimeType("application/json");
-	xmlhttp.send();
+	xmlhttp.send();*/
+	
+	initGame(null);
 }
 
 var timer;
 
 var index;
+
+var compt;
 
 var sec;
 
@@ -52,14 +214,20 @@ var Lifelines = {
 };
 
 window.onload = function () {
+	//Get selected categories from previous sliders
+	selectedCategories = getSelectedCategories();
+	
 	//Set global events
 	document.addEventListener('keydown', function(e) {
     	console.log(e.keyCode);
     	
     	switch(e.keyCode){
-    	// RED -> 50:50 lifeline
+    	// RED -> 50:50
 		case 403:
-			if(Checker.checkLifeline('half') && panelId === 'Q'){
+			if(panelId === 'Q' && Checker.checkLifeline('half')){
+				document.getElementById('half').style.backgroundColor = 'maroon';
+				document.getElementById('half').style.opacity = '0.7';
+				
 				sec = timer.getTimeValues().toString();
 				
 				timer.pause();
@@ -68,14 +236,14 @@ window.onload = function () {
 				
 				for(var num = 1; num <= 4; num++){
 					if(!Checker.isCorrect(num)){
-						nums += num;
+						nums.push(num);
 					}
 				}
 				
-				shuffle(nums);
+				nums = shuffle(nums);
 				
-				document.getElementById(nums[0]).disabled = true;
-				document.getElementById(nums[1]).disabled = true;
+				document.getElementById(nums[0]).style.opacity = '0';
+				document.getElementById(nums[1]).style.opacity = '0';
 				
 				deletedAnswers[nums[0]-1] = true;
 				deletedAnswers[nums[1]-1] = true;
@@ -84,9 +252,12 @@ window.onload = function () {
 			}
 			
 			break;
-		// GREEN -> repeat lifeline
+		// GREEN -> repeat
 		case 404:
-			if(Checker.checkLifeline('repeat') && panelId === 'Q'){
+			if(panelId === 'Q' && Checker.checkLifeline('repeat')){
+				document.getElementById('repeat').style.backgroundColor = 'seagreen';
+				document.getElementById('repeat').style.opacity = '0.7';
+				
 				sec = timer.getTimeValues().toString();
 				
 				timer.pause();
@@ -97,38 +268,150 @@ window.onload = function () {
 			}
 			
 			break; 	
-    	// YELLOW -> change lifeline
+    	// YELLOW -> change
     	case 405:
-    		if(Checker.checkLifeline('change') && panelId === 'Q'){
+    		if(panelId === 'Q' && Checker.checkLifeline('change')){
+				document.getElementById('change').style.backgroundColor = 'gold';
+				document.getElementById('change').style.opacity = '0.7';
     			index++;
+    			
+    			timer.stop();
 				
 				initQuestion();
 			}
     		
     		break;
-    	// BLUE -> time lifeline
+    	// BLUE -> time
     	case 406:
-    		if(Checker.checkLifeline('time') && panelId === 'Q'){
-    			sec = timer.getTimeValues().toString();
+    		if(panelId === 'Q' && Checker.checkLifeline('time')){
+				document.getElementById('time').style.backgroundColor = 'darkblue';
+				document.getElementById('time').style.opacity = '0.7';
 				
-				timer.pause();
-				
-				sec += 30;
-				
-				timer.start({countdown: true, startValues: {seconds: sec}});
+    			timer.reset();
 			}
     		
     		break;
-    	//ENTER -> several things
+    	// ENTER -> several things
     	case 13:
     		switch(panelId){
     		case 'N': initQuestion(); break;
     		case 'W': break;
     		case 'L': break;
-    		case 'Q': Checker.checkAnswer($(".answer:focus").id); break;
+    		case 'Q': Checker.checkAnswer(); break;
     		}
-    		
     		break;
+    	// LEFT nav
+    	case 37:
+    		if(panelId === 'Q'){
+    			var id = document.activeElement.id;
+    			switch(parseInt(id)){
+    			case 1: break;
+    			case 2:
+    				if(!deletedAnswers[0]){
+    					document.activeElement.blur();
+    					document.getElementById('1').focus();
+    				}else if(!deletedAnswers[2]){
+    					document.activeElement.blur();
+    					document.getElementById('3').focus();
+    				}
+    				break;
+    			case 3: break;
+    			case 4:
+    				if(!deletedAnswers[2]){
+    					document.activeElement.blur();
+    					document.getElementById('3').focus();
+    				}else if(!deletedAnswers[0]){
+    					document.activeElement.blur();
+    					document.getElementById('1').focus();
+    				}
+    				break;
+    			}
+    		}
+			break;
+		// UP nav
+		case 38:
+			if(panelId === 'Q'){
+				var id = document.activeElement.id;
+				switch(parseInt(id)){
+				case 1: break;
+				case 2: break;
+				case 3:
+					if(!deletedAnswers[0]){
+						document.activeElement.blur();
+						document.getElementById('1').focus();
+					}else if(!deletedAnswers[1]){
+						document.activeElement.blur();
+						document.getElementById('2').focus();
+					}
+					break;
+				case 4:
+					if(!deletedAnswers[1]){
+						document.activeElement.blur();
+						document.getElementById('2').focus();
+					}else if(!deletedAnswers[0]){
+						document.activeElement.blur();
+						document.getElementById('1').focus();
+					}
+					break;
+				}
+			}
+			break;
+    	// RIGHT nav
+    	case 39:
+    		if(panelId === 'Q'){
+    			var id = document.activeElement.id;
+    			switch(parseInt(id)){
+    			case 1:
+    				if(!deletedAnswers[1]){
+						document.activeElement.blur();
+						document.getElementById('2').focus();
+					}else if(!deletedAnswers[3]){
+	    				document.activeElement.blur();
+	    				document.getElementById('4').focus();
+					}
+    				break;
+    			case 2: break;
+    			case 3:
+    				if(!deletedAnswers[3]){
+        				document.activeElement.blur();
+        				document.getElementById('4').focus();
+					}else if(!deletedAnswers[1]){
+						document.activeElement.blur();
+						document.getElementById('2').focus();
+					}
+    				break;
+    			case 4: break;
+    			}
+    		}
+			break;
+    	// DOWN nav
+    	case 40:
+    		if(panelId === 'Q'){
+    			var id = document.activeElement.id;
+				switch(parseInt(id)){
+				case 1:
+					if(!deletedAnswers[2]){
+        				document.activeElement.blur();
+        				document.getElementById('3').focus();
+					}else if(!deletedAnswers[3]){
+						document.activeElement.blur();
+						document.getElementById('4').focus();
+					}
+					break;
+				case 2:
+					if(!deletedAnswers[3]){
+        				document.activeElement.blur();
+        				document.getElementById('4').focus();
+					}else if(!deletedAnswers[2]){
+						document.activeElement.blur();
+						document.getElementById('3').focus();
+					}
+					break;
+				case 3: break;
+				case 4: break;
+				}
+    		}
+			break;
     	}
 	});
 	
@@ -136,6 +419,7 @@ window.onload = function () {
 };
 
 function initGame(questions){
+	/*
 	var selectedQuestions = [];
 	
 	for(var i = 0; i < selectedCategories.length; i++){
@@ -160,11 +444,14 @@ function initGame(questions){
 		});
 	}
 	
-	shuffle(selectedQuestions);
+	selectedQuestions = shuffle(selectedQuestions);
 	
 	elevenQuestions = selectedQuestions.slice(0,10);
+	*/
+	elevenQuestions = hardcoded_list;
 	
 	index = 0;
+	compt = 1;
 	
 	opening();
 }
@@ -176,7 +463,7 @@ function opening(){
 	
 	var path = 'video/opening.mp4';
 	
-	var video = playGameVideo(path, 'opening');
+	var video = playGameVideo(hardcoded_video, 'opening');
 	
 	video.addEventListener('ended', function(){
 		cleanScreen();
@@ -199,7 +486,7 @@ function initQuestion(){
 function playVideo(){
 	panelId = 'V';
 	
-	var path = elevenQuestions[index].video;
+	var path = elevenQuestions[index].videoPath;
 
 	var video = playGameVideo(path, 'video');
 	
@@ -215,75 +502,111 @@ function showQuestion(){
 	var question = elevenQuestions[index].question;
 	var answers = elevenQuestions[index].answers;
 	
+	document.getElementById('num-container').innerHTML = compt + ' / 10';
+	
 	var timeContainer = document.getElementById('time-container');
-	var countdownTag = document.createElement('h2');
+	var countdownTag = document.createElement('p');
 	countdownTag.id = 'countdown';
 	timeContainer.appendChild(countdownTag);
-	countdownTag.html(timer.getTimeValues().toString());
+	countdownTag.innerHTML = '60';
 	timer.addEventListener('secondsUpdated', function() {
-		countdownTag.html(timer.getTimeValues().toString());
+		countdownTag.innerHTML = timer.getTimeValues().seconds.toString();
+		
+		if(timer.getTimeValues().seconds === 1 || timer.getTimeValues().seconds === 3){
+			countdownTag.style.backgroundColor = 'rgba(200,0,0,0.5)';
+		}else{
+			countdownTag.style.backgroundColor = 'rgba(20,20,20,0.5)';
+		}
 	});
 	timer.addEventListener('targetAchieved', function() {
+		timer.stop();
 	    lose();
 	});
 	
 	var questionContainer = document.getElementById('question-container');
-	var questionTag = document.createElement('h2');
+	var questionTag = document.createElement('p');
 	questionTag.innerHTML = question;
 	questionTag.id = 'question';
 	questionContainer.appendChild(questionTag);
 	
 	var answersContainer = document.getElementById('answers-container');
-	var answer1 = document.createElement('button');
+	var answersTable = document.createElement('table');
+	var row1 = document.createElement('tr');
+	var answer1 = document.createElement('td');
 	answer1.innerHTML = answers[0];
 	answer1.id = '1';
 	answer1.setAttribute('class', 'answer');
-	answer1.focusable = true;
-	answersContainer.appendChild(answer1);
-	if(deletedAnswers[0]){document.getElementById(1).disabled = true;}
-	var answer2 = document.createElement('button');
+	answer1.setAttribute('tabindex', '0');
+	if(deletedAnswers[0]){answer1.style.opacity = '0';}
+	var answer2 = document.createElement('td');
 	answer2.innerHTML = answers[1];
 	answer2.id = '2';
 	answer2.setAttribute('class', 'answer');
-	answer2.focusable = true;
-	answersContainer.appendChild(answer2);
-	if(deletedAnswers[1]){document.getElementById(2).disabled = true;}
-	var answer3 = document.createElement('button');
+	answer2.setAttribute('tabindex', '0');
+	if(deletedAnswers[1]){answer2.style.opacity = '0';}
+	row1.appendChild(answer1);
+	row1.appendChild(answer2);
+	var row2 = document.createElement('tr');
+	var answer3 = document.createElement('td');
 	answer3.innerHTML = answers[2];
 	answer3.id = '3';
 	answer3.setAttribute('class', 'answer');
-	answer3.focusable = true;
-	answersContainer.appendChild(answer3);
-	if(deletedAnswers[2]){document.getElementById(3).disabled = true;}
-	var answer4 = document.createElement('button');
+	answer3.setAttribute('tabindex', '0');
+	if(deletedAnswers[2]){answer3.style.opacity = '0';}
+	var answer4 = document.createElement('td');
 	answer4.innerHTML = answers[3];
 	answer4.id = '4';
 	answer4.setAttribute('class', 'answer');
-	answer4.focusable = true;
-	answersContainer.appendChild(answer4);
-	if(deletedAnswers[3]){document.getElementById(4).disabled = true;}
+	answer4.setAttribute('tabindex', '0');
+	if(deletedAnswers[3]){answer4.style.opacity = '0';}
+	row2.appendChild(answer3);
+	row2.appendChild(answer4);
+	answersTable.appendChild(row1);
+	answersTable.appendChild(row2);
+	answersContainer.appendChild(answersTable);
+	
+	answer1.focus();
 	
 	var lifelinesContainer = document.getElementById('lifelines-container');
-	var bHalf = document.createElement('button');
-	bHalf.innerHTML = '50:50';
+	var lifelinesTable = document.createElement('table');
+	var bHalf = document.createElement('td');
+	bHalf.innerHTML = '<p> 50:50 </p>';
 	bHalf.id = 'half';
 	bHalf.setAttribute('class', 'lifeline');
-	lifelinesContainer.appendChild(bHalf);
-	var bRepeat = document.createElement('button');
-	bRepeat.innerHTML = '&#xe5d5;';
+	lifelinesTable.appendChild(bHalf);
+	var bRepeat = document.createElement('td');
+	bRepeat.innerHTML = '<i class="fa fa-repeat"></i>';
 	bRepeat.id = 'repeat';
 	bRepeat.setAttribute('class', 'lifeline');
-	lifelinesContainer.appendChild(bRepeat);
-	var bChange = document.createElement('button');
-	bChange.innerHTML = '&#xf268;';
+	lifelinesTable.appendChild(bRepeat);
+	var bChange = document.createElement('td');
+	bChange.innerHTML = '<i class="fa fa-exchange"></i>';
 	bChange.id = 'change';
 	bChange.setAttribute('class', 'lifeline');
-	lifelinesContainer.appendChild(bChange);
-	var bTime = document.createElement('button');
-	bTime.innerHTML = '&#xe077;';
+	lifelinesTable.appendChild(bChange);
+	var bTime = document.createElement('td');
+	bTime.innerHTML = '<i class="fa fa-hourglass-end"></i>';
 	bTime.id = 'time';
 	bTime.setAttribute('class', 'lifeline');
-	lifelinesContainer.appendChild(bTime);
+	lifelinesTable.appendChild(bTime);
+	lifelinesContainer.appendChild(lifelinesTable);
+	
+	if(Lifelines.half){
+		bHalf.style.backgroundColor = 'maroon';
+		bHalf.style.opacity = '0.7';
+	}
+	if(Lifelines.repeat){
+		bRepeat.style.backgroundColor = 'seagreen';
+		bRepeat.style.opacity = '0.7';
+	}
+	if(Lifelines.change){
+		bChange.style.backgroundColor = 'gold';
+		bChange.style.opacity = '0.7';
+	}
+	if(Lifelines.time){
+		bTime.style.backgroundColor = 'darkblue';
+		bTime.style.opacity = '0.7';
+	}
 	
 	timer.start({countdown: true, startValues: {seconds: sec}});
 }
@@ -298,9 +621,12 @@ var Checker = {
 		}
 	},
 	
-	checkAnswer: function checkAnswer(id){
-		if(Checker.isCorrect(id)){
+	checkAnswer: function checkAnswer(){
+		timer.stop();
+		
+		if(Checker.isCorrect()){
 			index++;
+			compt++;
 			
 			if(!Lifelines.change && index < 10 || Lifelines.change && index < 11){
 				next();
@@ -312,8 +638,8 @@ var Checker = {
 		}
 	},
 	
-	isCorrect: function isCorrect(id){
-		return (elevenQuestions[index].correctAnswer === elevenQuestions[index].answers[id-1]);
+	isCorrect: function isCorrect(){
+		return (elevenQuestions[index].correctAnswer === document.activeElement.innerHTML);
 	}
 };
 
@@ -324,7 +650,7 @@ function next(){
 	
 	var path = 'video/next.mp4';
 	
-	playGameVideo(path, 'next');
+	playGameVideo(hardcoded_video, 'next');
 }
 
 function win(){
@@ -334,7 +660,7 @@ function win(){
 	
 	var path = 'video/win.mp4';
 	
-	playGameVideo(path, 'win');
+	playGameVideo(hardcoded_video, 'win');
 }
 
 function lose(){
@@ -344,7 +670,7 @@ function lose(){
 	
 	var path = 'video/lose.mp4';
 	
-	playGameVideo(path, 'lose');
+	playGameVideo(hardcoded_video, 'lose');
 }
 
 function playGameVideo(path, id){

@@ -11,7 +11,7 @@ createPage(5, 2, "img/3", "#tv_carousel");
 
 function createPage(numOfImages, numOfId, stringRoot, stringElementId) {
 	// create the page
-	for(i = 0; i < numOfImages; i++) {
+	for(var i = 0; i < numOfImages; i++) {
 		// get a random number between 0 and 2
 		var id = Math.floor(Math.random() * numOfId);
 		// create the panel element
