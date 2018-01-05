@@ -1,5 +1,6 @@
 //array of selected categories
 var categories = []; 
+var removed = []; 
 
 //By default menu is closed
 //So set this to false
@@ -26,7 +27,7 @@ window.onload = function () {
 					pushSubcategories('erase', id);
 					pushSubcategories('push', id);
 				} else {
-					categories.push(id);
+					categories.push(id.toString());
 				}
 				// select the subcategory panels if needed
 				// subcategory string identifiers have more than 11 characters
@@ -40,7 +41,7 @@ window.onload = function () {
 				if (id.length == 1) {
 					pushSubcategories('erase', id);
 				} else {
-					categories.splice(id,1);
+					categories.splice(categories.indexOf(id.toString()),1);
 				}
 				// unselect the subcategory panels if needed
 				// subcategory string identifiers have more than 11 characters
@@ -70,6 +71,8 @@ window.onload = function () {
 			break;
 		// down arrow
 		case 40:
+			$("#menu").removeClass("open");
+			menuOpen = false;
 			// get the category id the user selected
 			var id = getId();
 			// load the subcategories panels depending on the category selected
@@ -87,8 +90,13 @@ window.onload = function () {
 			break;
 		// info button
 		case 457:
+			$('html,body').animate({
+				scrollTop: 0
+			}, 500, function(){ // function to focus here
+				$("#main_carousel").find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
+			});
 			$("#menu").toggleClass("open");
-		    menuOpen =! menuOpen;
+		    menuOpen = !menuOpen;
 			break;
 		}
 	});    
@@ -197,7 +205,7 @@ function pushSubcategories(string, id) {
 				// find the category to substract in the array and substract it
 				var index = categories.indexOf(id.concat(i.toString()));
 				if (index != -1) {
-					categories.splice(index);
+					removed = categories.splice(index, 1);
 				}
 			}
 		}
@@ -210,7 +218,7 @@ function pushSubcategories(string, id) {
 				// find the category to substract in the array and substract it
 				var index = categories.indexOf(id.concat(i.toString()));
 				if (index != -1) {
-					categories.splice(index);
+					removed = categories.splice(index, 1);
 				}			
 			}
 		}
@@ -223,7 +231,7 @@ function pushSubcategories(string, id) {
 				// find the category to substract in the array and substract it
 				var index = categories.indexOf(id.concat(i.toString()));
 				if (index != -1) {
-					categories.splice(index);
+					removed = categories.splice(index, 1);
 				}			
 			}
 		}
@@ -236,7 +244,7 @@ function pushSubcategories(string, id) {
 				// find the category to substract in the array and substract it
 				var index = categories.indexOf(id.concat(i.toString()));
 				if (index != -1) {
-					categories.splice(index);
+					removed = categories.splice(index);
 				}			
 			}
 		}
@@ -272,65 +280,65 @@ function manageListPanel() {
 		case '10':
 			string = "Movies: Action";
 			break;
-		case '10':
+		case '11':
 			string = "Movies: Comedy";
 			break;
-		case '10':
+		case '12':
 			string = "Movies: Historical";
 			break;
-		case '10':
+		case '13':
 			string = "Movies: Horror";
 			break;
-		case '10':
+		case '14':
 			string = "Movies: Sci-Fi";
 			break;
-		case '10':
+		case '15':
 			string = "Movies: Fantasy";
 			break;
-		case '10':
+		case '16':
 			string = "Movies: Western";
 			break;
-		case '10':
+		case '17':
 			string = "Movies: Suspense";
 			break;
-		case '10':
+		case '18':
 			string = "Movies: Romance";
 			break;
 		case '19':
 			string = "Movies: Animation";
 			break;
 		case '20':
-			string = "TV: News";
-			break;
-		case '20':
-			string = "TV: Gossip";
-			break;
-		case '20':
-			string = "TV: Reality Shows";
-			break;
-		case '20':
-			string = "TV: Game Shows";
-			break;
-		case '24':
-			string = "TV: Late Nights";
-			break;
-		case '30':
 			string = "Sports: Olympics";
 			break;
-		case '31':
+		case '21':
 			string = "Sports: Football";
 			break;
-		case '32':
+		case '22':
 			string = "Sports: Basketball";
 			break;
-		case '33':
+		case '23':
 			string = "Sports: Tennis";
 			break;
-		case '34':
+		case '24':
 			string = "Sports: F1";
 			break;
-		case '35':
+		case '25':
 			string = "Sports: Moto GP";
+			break;
+		case '30':
+			string = "TV: News";
+			break;
+		case '31':
+			string = "TV: Gossip";
+			break;
+		case '32':
+			string = "TV: Reality Shows";
+			break;
+		case '33':
+			string = "TV: Game Shows";
+			break;
+		case '34':
+			string = "TV: Late Nights";
 			break;
 		}
 		

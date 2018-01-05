@@ -1,0 +1,70 @@
+// create main page
+for(i = 0; i < 4; i++) {
+	// get a random number between 0 and 5
+	var id = Math.floor(Math.random() * 5);
+	// create the panel element
+	var div = document.createElement('div');
+	div.className = 'panel';
+	// create the image element
+	var img = document.createElement('img');
+	img.src = "img/".concat(i.toString(), "_", id.toString(), ".png");
+	// append the elements to create the html structure
+	div.append(img);
+	$("#main_carousel").append(div);
+}
+// create music page
+for(i = 0; i < 6; i++) {
+	// get a random number between 0 and 2
+	var id = Math.floor(Math.random() * 2);
+	// create the panel element
+	var div = document.createElement('div');
+	div.className = 'panel';
+	// create the image element
+	var img = document.createElement('img');
+	img.src = "img/0".concat(i.toString(), "_", id.toString(), ".png");
+	// append the elements to create the html structure
+	div.append(img);
+	$("#music_carousel").append(div);
+}
+// create movies page
+for(i = 0; i < 10; i++) {
+	// get a random number between 0 and 2
+	var id = Math.floor(Math.random() * 2);
+	// create the panel element
+	var div = document.createElement('div');
+	div.className = 'panel';
+	// create the image element
+	var img = document.createElement('img');
+	img.src = "img/1".concat(i.toString(), "_", id.toString(), ".png");
+	// append the elements to create the html structure
+	div.append(img);
+	$("#movies_carousel").append(div);
+}
+// create sports page
+for(i = 0; i < 6; i++) {
+	// get a random number between 0 and 2
+	var id = Math.floor(Math.random() * 2);
+	// create the panel element
+	var div = document.createElement('div');
+	div.className = 'panel';
+	// create the image element
+	var img = document.createElement('img');
+	img.src = "img/2".concat(i.toString(), "_", id.toString(), ".png");
+	// append the elements to create the html structure
+	div.append(img);
+	$("#sports_carousel").append(div);
+}
+// create tv page
+for(i = 0; i < 5; i++) {
+	// get a random number between 0 and 2
+	var id = Math.floor(Math.random() * 2);
+	// create the panel element
+	var div = document.createElement('div');
+	div.className = 'panel';
+	// create the image element
+	var img = document.createElement('img');
+	img.src = "img/3".concat(i.toString(), "_", id.toString(), ".png");
+	// append the elements to create the html structure
+	div.append(img);
+	$("#tv_carousel").append(div);
+}
