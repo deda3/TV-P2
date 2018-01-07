@@ -130,8 +130,6 @@ function getId() {
 }
 
 function loadSecondPage(id) {
-	menuNumber = id;
-	
 	var string;
 	switch(id) {
 	// show elements in music page and hide every other
