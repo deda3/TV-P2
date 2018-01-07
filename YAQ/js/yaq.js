@@ -45,25 +45,7 @@ function cleanScreen(){
 }
 
 function getSelectedCategories(){
-	return 
 	return JSON.parse(localStorage.getItem('categories'));
-}
-
-function loadAllJSON(){
-	var path = 'json/questions.json';
-	var xmlhttp = new XMLHttpRequest();
-	
-	xmlhttp.onreadystatechange = function(){
-		if(this.xmlhttp.readyState === 4 && this.xmlhttp.status !== 200){
-			var questions = JSON.parse(this.xmlhttp.responseText);
-			
-			initGame(questions);
-		}
-	};
-	
-	xmlhttp.open("GET", path, true);
-	xmlhttp.overrideMimeType("application/json");
-	xmlhttp.send();
 }
 
 var timer;
@@ -102,7 +84,7 @@ window.onload = function () {
 		case 403:
 			if(panelId === 'Q' && Checker.checkLifeline('half')){
 				document.getElementById('half').style.backgroundColor = 'maroon';
-				document.getElementById('half').style.opacity = '0.7';
+				document.getElementById('half').style.opacity = '0.6';
 				
 				sec = timer.getTimeValues().toString();
 				
@@ -132,7 +114,7 @@ window.onload = function () {
 		case 404:
 			if(panelId === 'Q' && Checker.checkLifeline('repeat')){
 				document.getElementById('repeat').style.backgroundColor = 'seagreen';
-				document.getElementById('repeat').style.opacity = '0.7';
+				document.getElementById('repeat').style.opacity = '0.6';
 				
 				sec = timer.getTimeValues().toString();
 				
@@ -148,7 +130,7 @@ window.onload = function () {
     	case 405:
     		if(panelId === 'Q' && Checker.checkLifeline('change')){
 				document.getElementById('change').style.backgroundColor = 'gold';
-				document.getElementById('change').style.opacity = '0.7';
+				document.getElementById('change').style.opacity = '0.6';
     			index++;
     			
     			timer.stop();
@@ -161,7 +143,7 @@ window.onload = function () {
     	case 406:
     		if(panelId === 'Q' && Checker.checkLifeline('time')){
 				document.getElementById('time').style.backgroundColor = 'darkblue';
-				document.getElementById('time').style.opacity = '0.7';
+				document.getElementById('time').style.opacity = '0.6';
 				
     			timer.reset();
 			}
@@ -171,8 +153,8 @@ window.onload = function () {
     	case 13:
     		switch(panelId){
     		case 'N': initQuestion(); break;
-    		case 'W': break;
-    		case 'L': break;
+    		case 'W': document.location.href = 'index.html'; break;
+    		case 'L': document.location.href = 'index.html'; break;
     		case 'Q': Checker.checkAnswer(); break;
     		}
     		break;
@@ -291,10 +273,10 @@ window.onload = function () {
     	}
 	});
 	
-	loadAllJSON();
+	initGame();
 };
 
-function initGame(questions){
+function initGame(){
 	var selectedQuestions = [];
 	
 	for(var i = 0; i < selectedCategories.length; i++){
@@ -314,9 +296,11 @@ function initGame(questions){
 			maxIndex = selectedCategory + '99';
 		}
 		
-		selectedQuestions = selectedQuestions + questions.filter(function(index, minIndex, maxIndex){
-			return index > minIndex && index < maxIndex;
-		});
+		var newQuestions = questions.filter(function(value, index){
+			return index >= minIndex && index <= maxIndex;
+		}, this);
+		
+		selectedQuestions = selectedQuestions.concat(newQuestions);
 	}
 	
 	var validQuestions = [];
@@ -329,7 +313,7 @@ function initGame(questions){
 	
 	validQuestions = shuffle(validQuestions);
 	
-	elevenQuestions = validQuestions.slice(0,10);
+	elevenQuestions = validQuestions.slice(0,11);
 	
 	index = 0;
 	compt = 1;
@@ -474,20 +458,36 @@ function showQuestion(){
 	
 	if(Lifelines.half){
 		bHalf.style.backgroundColor = 'maroon';
-		bHalf.style.opacity = '0.7';
+		bHalf.style.opacity = '0.6';
 	}
 	if(Lifelines.repeat){
 		bRepeat.style.backgroundColor = 'seagreen';
-		bRepeat.style.opacity = '0.7';
+		bRepeat.style.opacity = '0.6';
 	}
 	if(Lifelines.change){
 		bChange.style.backgroundColor = 'gold';
-		bChange.style.opacity = '0.7';
+		bChange.style.opacity = '0.6';
 	}
 	if(Lifelines.time){
 		bTime.style.backgroundColor = 'darkblue';
-		bTime.style.opacity = '0.7';
+		bTime.style.opacity = '0.6';
 	}
+
+	var color;
+	
+	switch(elevenQuestions[index].category){
+	case 'music': color = 'rgba(102, 0, 102, 0.3)'; break;
+	case 'movies&TVseries': color = 'rgba(102, 0, 0, 0.3)'; break;
+	case 'TVprograms': color = 'rgba(0, 134, 179, 0.3)'; break;
+	case 'sports': color = 'rgba(51, 102, 0, 0.3)'; break;
+	}
+	
+	timeContainer.style.backgroundColor = color;
+	questionContainer.style.backgroundColor = color;
+	
+	var str = 'solid thin white';
+	answersContainer.style.borderTop = str;
+	answersContainer.style.borderBottom = str;
 	
 	timer.start({countdown: true, startValues: {seconds: sec}});
 }
@@ -519,8 +519,12 @@ var Checker = {
 		}
 	},
 	
-	isCorrect: function isCorrect(){
-		return (elevenQuestions[index].correctAnswer === document.activeElement.innerHTML);
+	isCorrect: function isCorrect(id){
+		if(id){
+			return (elevenQuestions[index].correctAnswer === elevenQuestions[index].answers[id-1]);
+		}else{
+			return (elevenQuestions[index].correctAnswer === document.activeElement.innerHTML);
+		}
 	}
 };
 

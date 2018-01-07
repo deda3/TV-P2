@@ -29,6 +29,7 @@ body {
 	top: 0;
 	font-size: 3em;
 	color: rgb(200,200,200);
+	background-color: transparent;
 	padding: 50px;
 }
 
@@ -64,8 +65,8 @@ table {
 	margin: auto;
 	font-size: 2.6em;
 	padding: 20px;
-	background-color: skyblue;
-	border: solid 5px rgba(0,0,0,0);
+	background-color: #cc7a37;
+	color: white;
 	border-radius: 50px;
 }
 
@@ -74,9 +75,9 @@ table {
 	margin: auto;
 	font-size: 2.6em;
 	padding: 20px;
-	background-color: deepskyblue;
+	background-color: white;
+	color: #cc7a37;
 	border-radius: 50px;
-	border: solid 5px white;
 	outline: none;
 }
 
@@ -113,11 +114,6 @@ table {
 
 i {
 	padding-top: 10px;
-}
-
-#answers-container {
-	border-top: solid thin white;
-	border-bottom: solid thin white;
 }
 
 #lifelines-container {

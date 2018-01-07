@@ -2,8 +2,10 @@ $(document).ready(function() {
 	$('.carousel').slick({
 		centerMode: true,
 		slidesToShow: 3,
-		focusOnSelect: true,
-		centerPadding: '50px',
+		draggable: false,
 		arrows: false,
+		waitForAnimate: true,
+		infinite: true,
+		swipe: false
 	});
 });

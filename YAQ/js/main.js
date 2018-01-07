@@ -6,16 +6,24 @@ var removed = [];
 //So set this to false
 var menuOpen = false;
 
+var currentCarousel = $("#main_carousel");
+
 window.onload = function () {
 	// initialization
 	$("#main_carousel").find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
+	
+	$('.carousel').on('afterChange', function(event, slick, currentSlide){
+		event.preventDefault();
+		currentCarousel.find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
+	});
+	
 	// add eventListener for keydown
 	document.addEventListener('keydown', function(e) {
 		e.preventDefault();
 		//console.log(e.keyCode);
 		switch(e.keyCode){
 		// center button
-		case 13: 
+		case 13:
 			// center button selects/deselects the focused category/subcategory
 			if (!$(".panel:focus").hasClass("selected_category")){
 				$(".panel:focus").addClass("selected_category");
@@ -52,13 +60,13 @@ window.onload = function () {
 			// refresh list of selected categories
 			manageListPanel();
 			console.log(categories);
-			$(".panel:focus").next().focus();
 		// left arrow
 		case 37:
-			$(".panel:focus").prev().focus();
 			break;
 		// up arrow
 		case 38:
+			currentCarousel = $("#main_carousel");
+			
 			$('html,body').animate({
 				scrollTop: 0
 			}, 500, function(){ // function to focus here
@@ -67,7 +75,6 @@ window.onload = function () {
 			break; 	
 		// right arrow
 		case 39:
-			$(".panel:focus").next().focus();	
 			break;
 		// down arrow
 		case 40:
@@ -82,11 +89,15 @@ window.onload = function () {
 			}, 500, function(){ // function to focus here
 				$(subcat.concat("carousel")).find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
 			});
-			break;	
+			break;
 		// play button
 		case 415:
 			// store the categories in localstorage
-			localStorage.setItem('categories', categories);
+			// The == and != operator consider null equal to only null or undefined
+			if(categories[0] != null){
+				localStorage.setItem('categories', JSON.stringify(categories));
+				document.location.href = 'yaq.html';
+			}
 			break;
 		// info button
 		case 457:
@@ -98,8 +109,16 @@ window.onload = function () {
 			$("#menu").toggleClass("open");
 		    menuOpen = !menuOpen;
 			break;
+		//Scroll down categories list
+		case 427:
+			scrollContent('down');
+			break;
+		//Scroll up categories list
+		case 428:
+			scrollContent('up');
+			break;
 		}
-	});    
+	});
 };
 
 function getId() {
@@ -111,10 +130,13 @@ function getId() {
 }
 
 function loadSecondPage(id) {
+	menuNumber = id;
+	
 	var string;
 	switch(id) {
 	// show elements in music page and hide every other
 	case '0':
+		currentCarousel = $("#music_carousel");
 		$("#music_page").show();
 		$("#movies_page").hide();
 		$("#sports_page").hide();
@@ -123,6 +145,7 @@ function loadSecondPage(id) {
 		break;
 		// show elements in movies page and hide every other
 	case '1': 
+		currentCarousel = $("#movies_carousel");
 		$("#music_page").hide();
 		$("#movies_page").show();
 		$("#sports_page").hide();
@@ -130,7 +153,8 @@ function loadSecondPage(id) {
 		string = "#movies_";	
 		break;
 		// show elements in tv page and hide every other
-	case '2': 
+	case '2':
+		currentCarousel = $("#tv_carousel");
 		$("#music_page").hide();
 		$("#movies_page").hide();
 		$("#sports_page").hide();
@@ -138,7 +162,8 @@ function loadSecondPage(id) {
 		string = "#tv_";
 		break;
 		// show elements in sports page and hide every other
-	case '3' : 
+	case '3':
+		currentCarousel = $("#sports_carousel");
 		$("#music_page").hide();
 		$("#movies_page").hide();
 		$("#sports_page").show();
@@ -360,3 +385,20 @@ function readFile(filePath) {
 var onError = function(e){
 	console.log(e.name + ': ' + e.message);
 };
+
+function scrollContent(direction) {
+	if (menuOpen && $(".categories_list").height() >= $(window).height() - 90) {
+		if((direction === 'down' && $("#list_panel").scrollTop() >= $(document).height() - 90) ||
+				(direction === 'up' && $("#list_panel").scrollTop() <= 0)) {
+			return;
+		}
+		
+		var amount = (direction === "up" ? "-=100px" : "+=100px");
+		
+	    $("#list_panel").animate({
+	        scrollTop: amount
+	    }, 1, 'swing');
+	    
+	    console.log($("#list_panel").scrollTop());
+	}
+}
