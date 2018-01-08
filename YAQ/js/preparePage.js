@@ -5,7 +5,7 @@ createPage(6, 2, "img/0", "#music_carousel");
 //create Movies page
 createPage(9, 2, "img/1", "#movies_carousel");
 //create TV page
-createPage(5, 2, "img/2", "#tv_carousel");
+createPage(4, 2, "img/2", "#tv_carousel");
 //create Sports page
 createPage(6, 2, "img/3", "#sports_carousel");
 

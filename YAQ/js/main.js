@@ -66,7 +66,6 @@ window.onload = function () {
 		// up arrow
 		case 38:
 			currentCarousel = $("#main_carousel");
-			
 			$('html,body').animate({
 				scrollTop: 0
 			}, 500, function(){ // function to focus here
@@ -97,10 +96,15 @@ window.onload = function () {
 			if(categories[0] != null){
 				localStorage.setItem('categories', JSON.stringify(categories));
 				document.location.href = 'yaq.html';
+			}else{
+				categories = ['0', '1', '2', '3'];
+				localStorage.setItem('categories', JSON.stringify(categories));
+				document.location.href = 'yaq.html';
 			}
 			break;
 		// info button
 		case 457:
+			currentCarousel = $("#main_carousel");
 			$('html,body').animate({
 				scrollTop: 0
 			}, 500, function(){ // function to focus here
@@ -228,7 +232,7 @@ function pushSubcategories(string, id) {
 		num = 9;
 		break;
 	case '2':
-		num = 5;
+		num = 4;
 		break;
 	case '3':
 		num = 6;
@@ -255,7 +259,7 @@ function manageListPanel() {
 	categories.forEach(function(cat){
 		switch(cat){
 		case '00':
-			string = "Music: Electronical";
+			string = "Music: Electronica";
 			break;
 		case '01':
 			string = "Music: Classical";
@@ -279,7 +283,7 @@ function manageListPanel() {
 			string = "Movies: Comedy";
 			break;
 		case '12':
-			string = "Movies: Historical";
+			string = "Movies: Drama";
 			break;
 		case '13':
 			string = "Movies: Horror";
@@ -294,7 +298,7 @@ function manageListPanel() {
 			string = "Movies: Animation";
 			break;
 		case '17':
-			string = "Movies: Suspense";
+			string = "Movies: Mystery & Thriller";
 			break;
 		case '18':
 			string = "Movies: Romance";
@@ -303,16 +307,13 @@ function manageListPanel() {
 			string = "TV: News";
 			break;
 		case '21':
-			string = "TV: Gossip";
+			string = "TV: Entertainment";
 			break;
 		case '22':
 			string = "TV: Reality Shows";
 			break;
 		case '23':
 			string = "TV: Game Shows";
-			break;
-		case '24':
-			string = "TV: Entertainment";
 			break;
 		case '30':
 			string = "Sports: Olympics";
@@ -330,7 +331,7 @@ function manageListPanel() {
 			string = "Sports: F1";
 			break;
 		case '35':
-			string = "Sports: Moto GP";
+			string = "Sports: MotoGP";
 			break;
 		}
 		
