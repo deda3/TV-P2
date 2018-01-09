@@ -63,7 +63,7 @@ table {
 .answer {
 	width: 40%;
 	margin: auto;
-	font-size: 2.6em;
+	font-size: 2.4em;
 	padding: 20px;
 	background-color: #cc7a37;
 	color: white;
@@ -73,7 +73,7 @@ table {
 .answer:focus {
 	width: 40%;
 	margin: auto;
-	font-size: 2.6em;
+	font-size: 2.4em;
 	padding: 20px;
 	background-color: white;
 	color: #cc7a37;
@@ -118,4 +118,13 @@ i {
 
 #lifelines-container {
 	background-color: black;
+}
+
+#lifeline_msg {
+	font-family: Helvetica;
+	font-style: italic;
+	font-size: 1.5em;
+	color: #fff;
+	margin: auto;
+	padding-bottom: 10px;
 }

@@ -434,27 +434,33 @@ function showQuestion(){
 	
 	var lifelinesContainer = document.getElementById('lifelines-container');
 	var lifelinesTable = document.createElement('table');
+	var lifelinesRow = document.createElement('tr');
 	var bHalf = document.createElement('td');
 	bHalf.innerHTML = '<p> 50:50 </p>';
 	bHalf.id = 'half';
 	bHalf.setAttribute('class', 'lifeline');
-	lifelinesTable.appendChild(bHalf);
+	lifelinesRow.appendChild(bHalf);
 	var bRepeat = document.createElement('td');
 	bRepeat.innerHTML = '<i class="fa fa-repeat"></i>';
 	bRepeat.id = 'repeat';
 	bRepeat.setAttribute('class', 'lifeline');
-	lifelinesTable.appendChild(bRepeat);
+	lifelinesRow.appendChild(bRepeat);
 	var bChange = document.createElement('td');
 	bChange.innerHTML = '<i class="fa fa-exchange"></i>';
 	bChange.id = 'change';
 	bChange.setAttribute('class', 'lifeline');
-	lifelinesTable.appendChild(bChange);
+	lifelinesRow.appendChild(bChange);
 	var bTime = document.createElement('td');
 	bTime.innerHTML = '<i class="fa fa-hourglass-end"></i>';
 	bTime.id = 'time';
 	bTime.setAttribute('class', 'lifeline');
-	lifelinesTable.appendChild(bTime);
+	lifelinesRow.appendChild(bTime);
+	lifelinesTable.appendChild(lifelinesRow);
+	var lifelinesMessage = document.createElement('p');
+	lifelinesMessage.innerHTML = 'Use the buttons on the remote control to spend the lifelines.';
+	lifelinesMessage.id = 'lifeline_msg';
 	lifelinesContainer.appendChild(lifelinesTable);
+	lifelinesContainer.appendChild(lifelinesMessage);
 	
 	if(Lifelines.half){
 		bHalf.style.backgroundColor = 'maroon';
@@ -476,10 +482,10 @@ function showQuestion(){
 	var color;
 	
 	switch(elevenQuestions[index].category){
-	case 'music': color = 'rgba(102, 0, 102, 0.3)'; break;
-	case 'movies&TVseries': color = 'rgba(102, 0, 0, 0.3)'; break;
-	case 'TVprograms': color = 'rgba(0, 134, 179, 0.3)'; break;
-	case 'sports': color = 'rgba(51, 102, 0, 0.3)'; break;
+	case 'music': color = 'rgba(102, 0, 102, 0.4)'; break;
+	case 'movies&TVseries': color = 'rgba(102, 0, 0, 0.4)'; break;
+	case 'TVprograms': color = 'rgba(0, 134, 179, 0.4)'; break;
+	case 'sports': color = 'rgba(51, 102, 0, 0.4)'; break;
 	}
 	
 	timeContainer.style.backgroundColor = color;

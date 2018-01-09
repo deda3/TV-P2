@@ -6,6 +6,7 @@ $(document).ready(function() {
 		arrows: false,
 		waitForAnimate: true,
 		infinite: true,
-		swipe: false
+		swipe: false,
+		speed: 100
 	});
 });

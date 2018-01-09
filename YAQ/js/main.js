@@ -14,6 +14,7 @@ window.onload = function () {
 	
 	$('.carousel').on('afterChange', function(event, slick, currentSlide){
 		event.preventDefault();
+		currentCarousel.slick('setPosition');
 		currentCarousel.find(".panel.slick-slide.slick-current.slick-active.slick-center").focus();
 	});
 	
