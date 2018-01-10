@@ -1,6 +1,4 @@
 
-var hardcoded_video = 'video/1500.mp4';
-
 function shuffle(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex;
 	
@@ -326,9 +324,9 @@ function opening(){
 	
 	cleanScreen();
 	
-	var path = 'video/opening.mp4';
+	var path = 'video/go.mp4';
 	
-	var video = playGameVideo(hardcoded_video, 'opening');
+	var video = playGameVideo(path, 'opening');
 	
 	video.addEventListener('ended', function(){
 		cleanScreen();
@@ -377,7 +375,7 @@ function showQuestion(){
 	timer.addEventListener('secondsUpdated', function() {
 		countdownTag.innerHTML = timer.getTimeValues().seconds.toString();
 		
-		if(timer.getTimeValues().seconds === 1 || timer.getTimeValues().seconds === 3){
+		if(timer.getTimeValues().seconds === 1 || timer.getTimeValues().seconds === 3 || timer.getTimeValues().seconds === 5){
 			countdownTag.style.backgroundColor = 'rgba(200,0,0,0.5)';
 		}else{
 			countdownTag.style.backgroundColor = 'rgba(20,20,20,0.5)';
@@ -539,9 +537,9 @@ function next(){
 	
 	cleanScreen();
 	
-	var path = 'video/next.mp4';
+	var path = 'video/go.mp4';
 	
-	playGameVideo(hardcoded_video, 'next');
+	playGameVideo(path, 'next');
 }
 
 function win(){
@@ -551,7 +549,7 @@ function win(){
 	
 	var path = 'video/win.mp4';
 	
-	playGameVideo(hardcoded_video, 'win');
+	playGameVideo(path, 'win');
 }
 
 function lose(){
@@ -561,7 +559,7 @@ function lose(){
 	
 	var path = 'video/lose.mp4';
 	
-	playGameVideo(hardcoded_video, 'lose');
+	playGameVideo(path, 'lose');
 }
 
 function playGameVideo(path, id){
