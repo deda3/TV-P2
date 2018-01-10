@@ -1,5 +1,5 @@
 
-var hardcoded_video = 'video/1500.mp4';
+var hardcoded_video = 'video/1600.mp4';
 
 function shuffle(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex;
