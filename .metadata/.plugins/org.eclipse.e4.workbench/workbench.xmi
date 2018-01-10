@@ -33,11 +33,12 @@
           <tags>persp.newWizSC:org.tizen.common.ui.tizenprojectwizard</tags>
           <tags>persp.actionSet:org.eclipse.debug.ui.profileActionSet</tags>
           <tags>persp.actionSet:org.eclipse.debug.ui.launchActionSet</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_iTLQ9tUjEeeng-BDjm9_4w" selectedElement="_iTLQ-dUjEeeng-BDjm9_4w" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_iTLQ9tUjEeeng-BDjm9_4w" selectedElement="_iTLQ99UjEeeng-BDjm9_4w" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_iTLQ99UjEeeng-BDjm9_4w" elementId="org.eclipse.ui.navigator.ProjectExplorerMStack" containerData="1650" selectedElement="_iTLQ-NUjEeeng-BDjm9_4w">
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_iTLQ-NUjEeeng-BDjm9_4w" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_iTCHUtUjEeeng-BDjm9_4w"/>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_iTLQ-dUjEeeng-BDjm9_4w" containerData="8350" selectedElement="_iTLQ-tUjEeeng-BDjm9_4w" horizontal="true">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_iTLQ-dUjEeeng-BDjm9_4w" containerData="8350" selectedElement="_iTLRANUjEeeng-BDjm9_4w" horizontal="true">
               <children xsi:type="basic:PartSashContainer" xmi:id="_iTLQ-tUjEeeng-BDjm9_4w" containerData="8296" selectedElement="_aoH6QNqIEeeXX8qnNAm0eQ">
                 <children xsi:type="basic:PartSashContainer" xmi:id="_aoH6QNqIEeeXX8qnNAm0eQ" containerData="7471" selectedElement="_iTLQ-9UjEeeng-BDjm9_4w" horizontal="true">
                   <children xsi:type="advanced:Placeholder" xmi:id="_iTLQ-9UjEeeng-BDjm9_4w" elementId="org.eclipse.ui.editorss" containerData="5000" ref="_iTCHANUjEeeng-BDjm9_4w"/>
@@ -80,12 +81,11 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_iTCHANUjEeeng-BDjm9_4w" elementId="org.eclipse.ui.editorss" selectedElement="_iTCHAdUjEeeng-BDjm9_4w">
-      <children xsi:type="basic:PartStack" xmi:id="_iTCHAdUjEeeng-BDjm9_4w" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_z1UxAPX8EeeDGN6oAvpuNw">
+      <children xsi:type="basic:PartStack" xmi:id="_iTCHAdUjEeeng-BDjm9_4w" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_5fCTkNUjEeeng-BDjm9_4w">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
-        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_5fCTkNUjEeeng-BDjm9_4w" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="index.html" iconURI="platform:/plugin/org.tizen.web.editor.html/icons/html_file.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;index.html&quot; partName=&quot;index.html&quot; title=&quot;index.html&quot; tooltip=&quot;YAQ/index.html&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/YAQ/index.html&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;4184&quot; selectionTopPixel=&quot;1587&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.tizen.web.editor.html.HTMLEditor&quot; name=&quot;index.html&quot; partName=&quot;index.html&quot; title=&quot;index.html&quot; tooltip=&quot;YAQ/index.html&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/YAQ/index.html&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1255&quot; selectionTopPixel=&quot;46&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.tizen.web.editor.html.HTMLEditor</tags>
           <tags>removeOnHide</tags>
@@ -97,7 +97,7 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_N74oUPIaEeemopxwCjXYuQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="style.css" iconURI="platform:/plugin/org.tizen.web.editor.css/icons/css_files.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.tizen.web.editor.css.CSSEditor&quot; name=&quot;style.css&quot; partName=&quot;style.css&quot; title=&quot;style.css&quot; tooltip=&quot;YAQ/css/style.css&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/YAQ/css/style.css&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;142&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.tizen.web.editor.css.CSSEditor&quot; name=&quot;style.css&quot; partName=&quot;style.css&quot; title=&quot;style.css&quot; tooltip=&quot;YAQ/css/style.css&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/YAQ/css/style.css&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1330&quot; selectionTopPixel=&quot;1748&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.tizen.web.editor.css.CSSEditor</tags>
           <tags>removeOnHide</tags>
@@ -109,12 +109,10 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_z1UxAPX8EeeDGN6oAvpuNw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="yaq.js" iconURI="platform:/plugin/org.tizen.web.editor.javascript/icons/javascript_file.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;yaq.js&quot; partName=&quot;yaq.js&quot; title=&quot;yaq.js&quot; tooltip=&quot;YAQ/js/yaq.js&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/YAQ/js/yaq.js&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;404&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.tizen.web.editor.javascript.JavascriptEditor&quot; name=&quot;yaq.js&quot; partName=&quot;yaq.js&quot; title=&quot;yaq.js&quot; tooltip=&quot;YAQ/js/yaq.js&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/YAQ/js/yaq.js&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;6&quot; selectionOffset=&quot;8373&quot; selectionTopPixel=&quot;7291&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.tizen.web.editor.javascript.JavascriptEditor</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
         </children>
       </children>
     </sharedElements>
@@ -122,6 +120,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.cdt.ui.cview.groupincludes=&quot;false&quot; org.eclipse.cdt.ui.cview.groupmacros=&quot;false&quot; org.eclipse.cdt.ui.editor.CUChildren=&quot;true&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_iUyagNUjEeeng-BDjm9_4w" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -204,7 +204,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_iNijANUjEeeng-BDjm9_4w" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_hwYBAPYAEeelas-tQGiPwA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_hh6M69UjEeeng-BDjm9_4w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_meah1_YeEeeLAerOt4OETQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_hh6M69UjEeeng-BDjm9_4w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_iNijAdUjEeeng-BDjm9_4w" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -222,7 +222,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_iNjKENUjEeeng-BDjm9_4w" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_hwYBC_YAEeelas-tQGiPwA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_hh6MUNUjEeeng-BDjm9_4w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_meah4vYeEeeLAerOt4OETQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_hh6MUNUjEeeng-BDjm9_4w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_iNjKEdUjEeeng-BDjm9_4w" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
